@@ -1,15 +1,5 @@
 <html>
 <body>
-
-
-<h1>What's good?!</h1>
-
-<p>
-	Build the landing page here
-	<br/>
-	If you can't find me, I'm in <b>joyride/joyride/givers/templates/index.html</b>
-</p>
-
 <script>
   // This is called with the results from from FB.getLoginStatus().
   function statusChangeCallback(response) {
@@ -86,11 +76,20 @@
     FB.api('/me', function(response) {
       console.log('Successful login for: ' + response.name);
       document.getElementById('status').innerHTML =
-        'Thanks for logging in, ' + response.name + '!';
-      document.getElementById('response').innerHTML = 'Here is your response: ' + response;
+        'Thanks for logging in, ' + FB.getAuthResponse().accessToken + '!';
     });
   }
 </script>
+
+
+<h1>What's good?!</h1>
+
+<p>
+	Build the landing page here
+	<br/>
+	If you can't find me, I'm in <b>joyride/joyride/givers/templates/index.html</b>
+</p>
+
 
 <!--
   Below we include the Login Button social plugin. This button uses
@@ -104,11 +103,13 @@
 <div id="status">
 </div>
 
-<div id="response">
-</div>
+<form action="search" method="get" onsubmit="">
+    {% csrf_token %}
+    <hidden name="client_id" value="FB.api.getid()"></hidden>
+    <input type="submit" value="Search for Shit" />
+</form>
 
 
 </body>
 
 </html>
-
