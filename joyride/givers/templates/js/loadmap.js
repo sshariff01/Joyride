@@ -1,20 +1,7 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Marker Animations</title>
-    <style>
-      html, body, #map-canvas {
-        height: 100%;
-        margin: 0px;
-        padding: 0px
-      }
-    </style>
-    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
-    <script>
-    
-//put in go to geolocation?
-//toronto for now
+
+// using a DROP animation. Clicking on the marker will toggle
+// the animation between a BOUNCE animation and no animation.
+
 var toronto = new google.maps.LatLng(43.7000,-79.4000);
 var parliament = new google.maps.LatLng(59.327383, 18.06747);
 var marker;
@@ -40,7 +27,7 @@ function initialize() {
 
 function toggleBounce() {
 
-  if (marker.getAnimation() != null) {
+  if (marker.getAnimation() !== null) {
     marker.setAnimation(null);
   } else {
     marker.setAnimation(google.maps.Animation.BOUNCE);
@@ -48,10 +35,3 @@ function toggleBounce() {
 }
 
 google.maps.event.addDomListener(window, 'load', initialize);
-
-    </script>
-  </head>
-  <body>
-    <div id="map-canvas"></div>
-  </body>
-</html>
