@@ -34,8 +34,8 @@
             // The following example creates a marker in Stockholm, Sweden
             // using a DROP animation. Clicking on the marker will toggle
             // the animation between a BOUNCE animation and no animation.
-            var stockholm = new google.maps.LatLng(59.32522, 18.07002);
-            var parliament = new google.maps.LatLng(59.327383, 18.06747);
+            var stockholm = new google.maps.LatLng("{{  start_lat }}", "{{  start_lng }}");
+            var parliament = new google.maps.LatLng("{{  end_lat }}", "{{  end_lng }}");
             var marker;
             var map;
             function initialize() {
@@ -269,8 +269,10 @@
 				  	<div id="slugline">
 					  	<h2>Slug Line</h2>
                            <p>{{ dump }}</p>
-                           <p>{{ start_location }}</p>
-                           <p>{{ end_location }}</p>
+
+
+                           <p>{{ start_lat }}</p>
+                           <p>{{ end_var }}</p>
                         <hr>
 				  	</div>
 				  </div>
