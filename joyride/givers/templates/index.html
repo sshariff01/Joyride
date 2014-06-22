@@ -35,6 +35,7 @@
            
             // using a DROP animation. Clicking on the marker will toggle
             // the animation between a BOUNCE animation and no animation.
+
             
             var tempStartLat="{{'start_location.lat'}}";
             var tempStartLng="{{'start_location.lng'}}";
@@ -43,8 +44,15 @@
             var tempEndLng="{{'end_location.lng'}}";
 
             
-            var start = new google.maps.LatLng(43.588451, -79.666276);
-            var end = new google.maps.LatLng(45.369543, -72.506836);
+//            var start = new google.maps.LatLng(43.588451, -79.666276);
+//            var end = new google.maps.LatLng(45.369543, -72.506836);
+
+            var stockholm = new google.maps.LatLng("{{  start_lat }}", "{{  start_lng }}");
+            var parliament = new google.maps.LatLng("{{  end_lat }}", "{{  end_lng }}");
+
+            var start = new google.maps.LatLng("{{  start_lat }}", "{{  start_lng }}");
+            var end = new google.maps.LatLng("{{  end_lat }}", "{{  end_lng }}");
+
             var marker;
             var map;
             
@@ -389,6 +397,14 @@
 						</div>
 					  	
 					  	
+				  	<div id="slugline">
+					  	<h2>Slug Line</h2>
+                           <p>{{ dump }}</p>
+
+
+                           <p>{{ start_lat }}</p>
+                           <p>{{ end_var }}</p>
+                        <hr>
 				  	</div>
 				  </div>
 			  </div>	
