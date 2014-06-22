@@ -77,16 +77,37 @@
         
         <!-- Form Submission Here Sending to Django -->
         <script>
-            var startingZip = $("#StartingLocation").val();
-            var endingZip = $("#Destination").val();
-
+            /*
+            $(document).ready(functin() {
+                $("#searchSubmit").on("click", function(event) {
+                    event.preventDefault()
+                    $.post("/search", {
+                       // set params and stuff
+                    }).then(function(data) {
+                        // do stuff with the returned data
+                    })
+                })
+            })
+            */
+            //var startingZip = $("#StartingLocation").val();
+            //var endingZip = $("#Destination").val();
+            /*$.ajax({
+                  type: "POST",
+                  url: "/search/",
+                  data: {
+                    csrfmiddlewaretoken: document.getElementsByName('csrfmiddlewaretoken')[0].value
+                  },
+                  success: "alert('Did it work?');",
+                  dataType: String
+              });
+            /*
             jQuery(function() {
                 var form = jQuery("#destinationForm");
                 form.submit(function(e) {
                 //jQuery("#StartingLocation").attr('disabled',true)
 
                 jQuery("#map-canvas").load(
-                    form.attr('action') + '#map-canvas', //the url that you're sending to in the backend
+                    //form.attr('action') + '#map-canvas', //the url that you're sending to in the backend
                     form.serializeArray(), //send array of starting and ending location
                     function(responseText, responseStatus) { //re-enable search button upon receiving response
                             jQuery("#searchSubmit").attr('disabled', false)
@@ -95,7 +116,7 @@
                 e.preventDefault(); 
                 }); //end function 2
             });  //end main func
-
+            */
         </script>
              
         
@@ -175,15 +196,17 @@
   function testAPI() {
     console.log('Welcome!  Fetching your information.... ');
     var fbID = FB.getAuthResponse().userID
+    var accessToken = FB.getAuthResponse().accessToken
     FB.api('/me', function(response) {
       console.log('Successful login for: ' + response.name);
       document.getElementById('status').innerHTML = '';
-      //document.getElementById('fb-id').value = FB.getAuthResponse().userID;
+      document.getElementById('search_form_fb_id').value = FB.getAuthResponse().userID;
       $.ajax({
           type: "POST",
           url: "/post_user/",
           data: {
             fb_id: fbID,
+            accessToken: accessToken,
             csrfmiddlewaretoken: document.getElementsByName('csrfmiddlewaretoken')[0].value
           },
           success: null,
@@ -243,7 +266,8 @@
 			    		<div class="form-group">
 			    			<input type="text" class="form-control"  id="Destination" name="Destination" placeholder="Ending at postal code___">
 			    		</div>
-			    		<button id="searchSubmit" type="submit" class="btn btn-primary">Search</button>
+                        <input id="search_form_fb_id" type="hidden" name="search_form_fb_id" value="">
+			    		<button id="searchSubmit" type="submit" class="btn btn-primary" name="search_button">Search</button>
 			    	</form>
 		    	</div>
 	    	</div>
@@ -255,6 +279,7 @@
 				  <div class="panel-body">
 				  	<div id="slugline">
 					  	<h2>Slug Line</h2>
+                           <p>{{ dump }}</p>
                         <hr>
 				  	</div>
 				  </div>
