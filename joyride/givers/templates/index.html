@@ -66,9 +66,30 @@
         
         <!-- Form Submission Here Sending to Django -->
         <script>
-            var startingZip = $("#StartingLocation").val();
-            var endingZip = $("#Destination").val();
-
+            /*
+            $(document).ready(functin() {
+                $("#searchSubmit").on("click", function(event) {
+                    event.preventDefault()
+                    $.post("/search", {
+                       // set params and stuff
+                    }).then(function(data) {
+                        // do stuff with the returned data
+                    })
+                })
+            })
+            */
+            //var startingZip = $("#StartingLocation").val();
+            //var endingZip = $("#Destination").val();
+            /*$.ajax({
+                  type: "POST",
+                  url: "/search/",
+                  data: {
+                    csrfmiddlewaretoken: document.getElementsByName('csrfmiddlewaretoken')[0].value
+                  },
+                  success: "alert('Did it work?');",
+                  dataType: String
+              });
+            /*
             jQuery(function() {
                 var form = jQuery("#destinationForm");
                 form.submit(function(e) {
@@ -84,7 +105,7 @@
                 e.preventDefault(); 
                 }); //end function 2
             });  //end main func
-
+            */
         </script>
              
         
@@ -235,7 +256,7 @@
 			    			<input type="text" class="form-control"  id="Destination" name="Destination" placeholder="Ending at postal code___">
 			    		</div>
                         <input id="search_form_fb_id" type="hidden" name="search_form_fb_id" value="">
-			    		<button id="searchSubmit" type="submit" class="btn btn-primary">Search</button>
+			    		<button id="searchSubmit" type="submit" class="btn btn-primary" name="search_button">Search</button>
 			    	</form>
 		    	</div>
 	    	</div>
@@ -247,7 +268,7 @@
 				  <div class="panel-body">
 				  	<div id="slugline">
 					  	<h2>Slug Line</h2>
-
+                           <p>{{ dump }}</p>
                         <hr>
 				  	</div>
 				  </div>
