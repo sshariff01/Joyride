@@ -31,25 +31,38 @@
 
         <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
         <script>
-            // The following example creates a marker in Stockholm, Sweden
+           
             // using a DROP animation. Clicking on the marker will toggle
             // the animation between a BOUNCE animation and no animation.
+
             var stockholm = new google.maps.LatLng("{{  start_lat }}", "{{  start_lng }}");
             var parliament = new google.maps.LatLng("{{  end_lat }}", "{{  end_lng }}");
+
+            var start = new google.maps.LatLng(43.722598,-79.645825);
+            var end = new google.maps.LatLng(43.851361,-79.332975);
+
             var marker;
             var map;
+            //get the starting longitude and latitude through JSON
+            var tempLat, tempLng;
+            var endLat, endLong; 
+            //change 'start' and 'end' location after receiving JSON
+            
+            var postalCodeLocation = new google.maps.LatLng()
+            
             function initialize() {
               var mapOptions = {
-                zoom: 13,
-                center: stockholm
+                zoom: 11,
+                center: start
               };
+              
               map = new google.maps.Map(document.getElementById('map-canvas'),
                       mapOptions);
               marker = new google.maps.Marker({
                 map:map,
                 draggable:true,
                 animation: google.maps.Animation.DROP,
-                position: parliament
+                position: end
               });
               google.maps.event.addListener(marker, 'click', toggleBounce);
             }
