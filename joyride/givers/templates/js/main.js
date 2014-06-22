@@ -35,6 +35,9 @@ $(".active").removeClass("active");
     $('html, body').stop().animate({
         scrollTop: $( $(this).attr('href') ).offset().top
     }, 500);
+    return false;$('html, body').stop().animate({
+        scrollTop: $( $(this).attr('href') ).offset().top
+    }, 500);
     return false;
   });	
 }
@@ -49,3 +52,14 @@ function windowH() {
 }
 
 windowH();
+
+function searchButton() {
+	$('#searchSubmit').click(function() {
+		 $('html, body').stop().animate({
+	        scrollTop: $('#map-canvas').offset().top
+	    }, 500);
+	    return false;
+	});
+}
+
+searchButton();

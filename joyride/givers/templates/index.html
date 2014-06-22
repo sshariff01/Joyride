@@ -8,7 +8,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         
         {% load staticfiles %}
-		<link rel="stylesheet" href="{% static 'css/custom.css' %}">
+		
         <!-- Place favicon.ico and apple-touch-icon(s) in the root directory -->
 
         <link rel="stylesheet" href="{% static 'css/normalize.css' %}">
@@ -27,6 +27,7 @@
                 padding: 0px;
             }
         </style>
+        <link rel="stylesheet" href="{% static 'css/custom.css' %}">
         <script>window.jQuery || document.write("<script src={% static 'js/vendor/jquery-2.1.1.min.js' %}><\/script>")</script>
 
         <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
@@ -34,16 +35,18 @@
            
             // using a DROP animation. Clicking on the marker will toggle
             // the animation between a BOUNCE animation and no animation.
-            var start = new google.maps.LatLng(43.722598,-79.645825);
-            var end = new google.maps.LatLng(43.851361,-79.332975);
+            
+            var tempStartLat="{{'start_location.lat'}}";
+            var tempStartLng="{{'start_location.lng'}}";
+            
+            var tempEndLat="{{'end_location.lat'}}";
+            var tempEndLng="{{'end_location.lng'}}";
+
+            
+            var start = new google.maps.LatLng(43.588451, -79.666276);
+            var end = new google.maps.LatLng(45.369543, -72.506836);
             var marker;
             var map;
-            //get the starting longitude and latitude through JSON
-            var tempLat, tempLng;
-            var endLat, endLong; 
-            //change 'start' and 'end' location after receiving JSON
-            
-            var postalCodeLocation = new google.maps.LatLng()
             
             function initialize() {
               var mapOptions = {
@@ -57,7 +60,7 @@
                 map:map,
                 draggable:true,
                 animation: google.maps.Animation.DROP,
-                position: end
+                position: start
               });
               google.maps.event.addListener(marker, 'click', toggleBounce);
             }
@@ -233,12 +236,13 @@
 	          <ul class="nav navbar-nav pull-right">
 	          	<li><a href="#map-canvas">Map</a></li>
 	            <li><a href="#login">Users</a></li>
-	            <li>
-                    <div class="fb-login-button" data-max-rows="1" data-size="large" data-show-faces="false" data-auto-logout-link="true"></div>
+	            <li><a>
+                    <div class="fb-login-button " data-max-rows="1" data-size="large" data-show-faces="false" data-auto-logout-link="true"></div>
 
                     <div id="status">
+                    
                     </div>
-
+                    </a>
 	            </li>
 	          </ul>
 	        </div><!--/.nav-collapse -->
@@ -264,7 +268,7 @@
 			    			<input type="text" class="form-control"  id="Destination" name="Destination" placeholder="Ending at postal code___">
 			    		</div>
                         <input id="search_form_fb_id" type="hidden" name="search_form_fb_id" value="">
-			    		<button id="searchSubmit" type="submit" class="btn btn-primary" name="search_button">Search</button>
+			    		<button id="searchSubmit" type="button" class="btn btn-primary" name="search_button">Search</button>
 			    	</form>
 		    	</div>
 	    	</div>
@@ -274,12 +278,117 @@
 	      <div class="starter-template">
 		      <div class="panel panel-default">
 				  <div class="panel-body">
-				  	<div id="slugline">
-					  	<h2>Slug Line</h2>
-                           <p>{{ dump }}</p>
-                           <p>{{ start_location }}</p>
-                           <p>{{ end_location }}</p>
-                        <hr>
+				  	<div id="slugline" class="align-center">
+					  	<h2>Sluggers</h2>
+					  	<hr>
+					  	<div class="row">
+						  	<div id="name" class="col-sm-4">
+						  		<h3>John Smith</h3>
+						  	</div>		
+						  	<div id="name" class="col-sm-4">
+						  		<h3>Mary Smith</h3>
+						  	</div>	
+						  	<div id="name" class="col-sm-4">
+						  		<h3>Justin Bieber</h3>
+						  	</div>	
+					  	</div>
+					
+					  	<div class="row profile" >
+					  		<img style="height:350px; " class="col-sm-4 col-md-4 img-circle" src="http://upload.wikimedia.org/wikipedia/commons/8/83/Young_man_with_dimples.jpg" alt="profile">  	
+					  		<img style="height:350px" class="col-sm-4 col-md-4 img-circle" src="http://colouredcollective.files.wordpress.com/2012/05/rywheadshot2012.jpg?w=558" alt="profile">  	
+					  		<img style="height:350px" class="col-sm-4 col-md-4 img-circle" src="http://assets-s3.usmagazine.com/uploads/assets/articles/69828-justin-bieber-arrest-stars-tweet-reactions-mugshot-jokes/1390500405_justin-bieber-mugshot-467.jpg" alt="profile">  	
+					  	</div>
+						<div class="row profile">
+						   <div class="col-md-4 ">
+							<div class="table-responsive">
+								<table class="table-condensed">
+									<thead>
+										<th></th>
+									</thead>
+									<tr>
+										<td><strong>Starting Distance</strong></td><td>9 km</td>
+									</tr>
+									<tr>
+										<td><strong>Destination Distance</strong></td><td>1 km</td>
+									</tr>
+									<tr>
+										<td><strong>Rating</strong></td>
+										<td>
+										    <span class="glyphicon glyphicon-star"></span>
+										    <span class="glyphicon glyphicon-star"></span>
+										    <span class="glyphicon glyphicon-star"></span>
+										    <span class="glyphicon glyphicon-star"></span>
+										    <span class="glyphicon glyphicon-star-empty"></span>
+										</td>
+									</tr>
+									<tr>
+										<td><strong>Endorsements</strong></td><td>5</td>
+									</tr>
+								</table>
+							</div>
+							<div id="map-profile"></div>
+						  </div>	
+						   <div class="col-md-4 ">
+							<div class="table-responsive">
+								<table class="table-condensed">
+									<thead>
+										<th></th>
+									</thead>
+									<tr>
+										<td><strong>Starting Distance</strong></td><td>9 km</td>
+									</tr>
+									<tr>
+										<td><strong>Destination Distance</strong></td><td>1 km</td>
+									</tr>
+									<tr>
+										<td><strong>Rating</strong></td>
+										<td>
+										    <span class="glyphicon glyphicon-star"></span>
+										    <span class="glyphicon glyphicon-star"></span>
+										    <span class="glyphicon glyphicon-star"></span>
+										    <span class="glyphicon glyphicon-star"></span>
+										    <span class="glyphicon glyphicon-star-empty"></span>
+										</td>
+									</tr>
+									<tr>
+										<td><strong>Endorsements</strong></td><td>5</td>
+									</tr>
+								</table>
+							</div>
+							<div id="map-profile"></div>
+						  </div>	
+						   <div class="col-md-4 ">
+							<div class="table-responsive">
+								<table class="table-condensed">
+									<thead>
+										<th></th>
+									</thead>
+									<tr>
+										<td><strong>Starting Distance</strong></td><td>9 km</td>
+									</tr>
+									<tr>
+										<td><strong>Destination Distance</strong></td><td>1 km</td>
+									</tr>
+									<tr>
+										<td><strong>Rating</strong></td>
+										<td>
+										    <span class="glyphicon glyphicon-star-empty"></span>
+										    <span class="glyphicon glyphicon-star-empty"></span>
+										    <span class="glyphicon glyphicon-star-empty"></span>
+										    <span class="glyphicon glyphicon-star-empty"></span>
+										    <span class="glyphicon glyphicon-star-empty"></span>
+										</td>
+									</tr>
+									<tr>
+										<td><strong>Endorsements</strong></td><td>1000</td>
+									</tr>
+								</table>
+							</div>
+							<div id="map-profile"></div>
+						  </div>	
+						</div>
+					  	
+					  	
 				  	</div>
 				  </div>
 			  </div>	
