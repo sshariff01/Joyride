@@ -38,16 +38,13 @@
             var end = new google.maps.LatLng(43.851361,-79.332975);
             var marker;
             var map;
+            //get the starting longitude and latitude through JSON
+            var tempLat, tempLng;
+            var endLat, endLong; 
+            //change 'start' and 'end' location after receiving JSON
             
-            var locations = [
-              ['Shams Shafiq', 47.06976, 15.43154, 1],
-              ['Shoabe Shariff', 47.06975, 15.43116, 2],
-              ['Chris Zeng', 47.09399, 15.40548, 3],
-              ['Konrad Zielinski', 47.06993, 15.40727, 4],
-              ['Aren Patel', 47.06934, 15.45888, 5],
-              ['Chimnay Raval', 47.04572, 15.43234, 6],
-              ['Justin Pasqualini', 47.08350, 15.43212, 7],
-            ];
+            var postalCodeLocation = new google.maps.LatLng()
+            
             function initialize() {
               var mapOptions = {
                 zoom: 11,
