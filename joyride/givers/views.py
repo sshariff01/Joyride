@@ -30,7 +30,7 @@ def search(request, lat_start="43.722598", lng_start="-79.645825", lat_end="43.8
     #dump = json.dumps(givers_zip_ratings)
     dump = json.dumps('[["545547692", 86.4365540305593], ["592257540", 71.67730794690695], ["733050239", 75.02406966663716], ["100002131130870", 83.35098178107881], ["1645560180", 91.70583373342106], ["715076506", 75.73249881179504], ["517765107", 37.01613186970565], ["10204097819428052", 37.089990452084265]]')
 
-    return render(request, 'search.html', dump)
+    return render(request, 'index.html', dump)
 
 def post_user(request):
     fbID = request.POST.get('fb_id', False).encode('utf8')

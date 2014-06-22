@@ -27,6 +27,8 @@
                 padding: 0px;
             }
         </style>
+        <script>window.jQuery || document.write("<script src={% static 'js/vendor/jquery-2.1.1.min.js' %}><\/script>")</script>
+
         <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
         <script>
             // The following example creates a marker in Stockholm, Sweden
@@ -64,20 +66,25 @@
         
         <!-- Form Submission Here Sending to Django -->
         <script>
+            var startingZip = $("#StartingLocation").val();
+            var endingZip = $("#Destination").val();
+
             jQuery(function() {
-                var form = jQuery("destinationForm");
+                var form = jQuery("#destinationForm");
                 form.submit(function(e) {
-                    jQuery("#StartingLocation").attr('disabled',true)
-                    jQuery("#map-canvas").load(
-                    "/search/", //the url that you're sending to in the backend
+                //jQuery("#StartingLocation").attr('disabled',true)
+
+                jQuery("#map-canvas").load(
+                    form.attr('action') + '#map-canvas', //the url that you're sending to in the backend
                     form.serializeArray(), //send array of starting and ending location
-                    function(responseText, responseStatus) { //re-enable search button upon receiving response 
-                            jQuery("#sendbutton").attr('disabled', false)
+                    function(responseText, responseStatus) { //re-enable search button upon receiving response
+                            jQuery("#searchSubmit").attr('disabled', false)
                     }
                 );
                 e.preventDefault(); 
                 }); //end function 2
-            });  //end main func     
+            });  //end main func
+
         </script>
              
         
@@ -215,12 +222,15 @@
 			    	<h3>Destination is making it easy to find people near you!</h3>
 		    	</div>
 		    	<div class="center">
-			    	<form id="destinationForm" role="form" class="form-inline">
+			    	<form id="destinationForm" action="/search/" role="form" class="form-inline" method="post" >
+                        {% csrf_token %}
+                        {{ form.non_field_errors }}
+                        {{ form.as_p }}
 			    		<div class="form-group">
-			    			<input type="text" class="form-control"  id="StartingLocation" placeholder="Starting from postal code___">
+			    			<input type="text" class="form-control"  id="StartingLocation" name="StartingLocation" placeholder="Starting from postal code___">
 			    		</div>
 			    		<div class="form-group">
-			    			<input type="text" class="form-control"  id="Destination" placeholder="Ending at postal code___">
+			    			<input type="text" class="form-control"  id="Destination" name="Destination" placeholder="Ending at postal code___">
 			    		</div>
 			    		<button id="searchSubmit" type="submit" class="btn btn-primary">Search</button>
 			    	</form>
@@ -234,7 +244,7 @@
 				  <div class="panel-body">
 				  	<div id="slugline">
 					  	<h2>Slug Line</h2>
-					  	<hr>
+                        <hr>
 				  	</div>
 				  </div>
 			  </div>	
@@ -242,8 +252,7 @@
 		</div><!-- /.container -->
 
         
-        <script>window.jQuery || document.write("<script src={% static 'js/vendor/jquery-2.1.1.min.js' %}><\/script>")</script>
-        
+
         
         <!-- Latest compiled and minified JavaScript -->
 		<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>	
@@ -259,5 +268,12 @@
             r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
             ga('create','UA-XXXXX-X');ga('send','pageview');
         </script>
+
+        <form action="#" method="post" id="dummyform">
+            {% csrf_token %}
+            {{ form.non_field_errors }}
+            {{ form.as_p }}
+            </div>
+        </form>
     </body>
 </html>
