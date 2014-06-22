@@ -97,12 +97,14 @@ def search(request, lat_start="43.722598", lng_start="-79.645825", lat_end="43.8
         count += 1
 
     dump = json.dumps(tupleOfDicts)
-    start_location = json.dumps(start_location)
-    end_location = json.dumps(end_location)
+    start_loc = {"start_location" : start_location}
+    start_loc = json.dumps(start_loc)
+    end_loc = {"end_location" : end_location}
+    end_loc = json.dumps(end_loc)
     #dump = json.dumps(givers_zip_ratings)
     #dump = json.dumps('[["545547692", 86.4365540305593], ["592257540", 71.67730794690695], ["733050239", 75.02406966663716], ["100002131130870", 83.35098178107881], ["1645560180", 91.70583373342106], ["715076506", 75.73249881179504], ["517765107", 37.01613186970565], ["10204097819428052", 37.089990452084265]]')
     #dump = '[[{"fb_id": "545547692","rating": 86.4365540305593}],[{"fb_id": "592257540","rating": 71.67730794690695}],[{"fb_id": "733050239","rating": 75.02406966663716}],[{"fb_id": "100002131130870","rating": 83.35098178107881}],[{"fb_id": "1645560180","rating": 91.70583373342106}],[{"fb_id": "715076506","rating": 75.73249881179504}],[{"fb_id": "517765107","rating": 37.01613186970565}],[{"fb_id": "10204097819428052","rating": 37.089990452084265}]]'
-    return render(request, 'index.html', {"start_location" : start_location, "end_location" : end_location, "dump" : dump})
+    return render(request, 'index.html', {"start_location" : start_loc, "end_location" : end_loc, "dump" : dump})
 
 
 def post_user(request):
