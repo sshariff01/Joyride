@@ -1,0 +1,6 @@
+  $(document).ready(function(){
+      $(".container").height($(window).height());
+          $(window).resize(function(){
+              $(".container").height($(window).height());
+      });
+  });

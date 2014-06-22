@@ -1,0 +1,6 @@
+  $(document).ready(function(){
+      $("#carousel-inner").height($(window).height());
+          $(window).resize(function(){
+              $("#carousel-inner").height($(window).height());
+      });
+  });

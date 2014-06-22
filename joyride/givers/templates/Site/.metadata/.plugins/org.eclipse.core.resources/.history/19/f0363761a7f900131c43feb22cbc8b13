@@ -1,0 +1,59 @@
+body {
+  padding-top: 50px;
+}
+.starter-template {
+  
+  text-align: center;
+}
+
+.main{
+	background-image: url('../img/mainBG.jpg');
+	background-size: cover;
+	
+}
+
+.panel{
+	margin:0 auto;
+	width: 80%;
+	
+	min-width: 150px;
+	background-image: linear-gradient(to right, rgb(240, 240, 240) 0px, rgb(250, 250, 250) 100%);
+	
+}
+
+.heading{
+	background-color: rgb(41, 41, 41);
+}
+
+.container{
+	margin: 0 auto;
+	min-height: 
+}
+.main-text{
+	padding-top: 30%;
+	text-align: center;
+	margin:0 auto;
+	color: rgb(254, 254,254);
+	text-shadow: 3px 2px black;
+	
+}
+
+#login{
+	background-image: url('../img/loginBG.jpg');
+	background-size: cover;
+	margin: 0 0 0 0;
+	width: 100%;
+	height:100%;
+}
+
+.center{
+	padding-left:30%;
+	padding-right:30%;
+}
+
+#map-canvas {
+        height: 100%;
+        margin: 0px;
+        padding: 0px
+      }
+
