@@ -12,11 +12,12 @@
     </style>
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
     <script>
-    
-//put in go to geolocation?
-//toronto for now
+// The following example creates a marker in Stockholm, Sweden
+// using a DROP animation. Clicking on the marker will toggle
+// the animation between a BOUNCE animation and no animation.
+
 var toronto = new google.maps.LatLng(43.7000,-79.4000);
-var parliament = new google.maps.LatLng(59.327383, 18.06747);
+var shoabe = new google.maps.LatLng(44.0000,-79.0000);
 var marker;
 var map;
 
@@ -28,14 +29,32 @@ function initialize() {
 
   map = new google.maps.Map(document.getElementById('map-canvas'),
           mapOptions);
+          
+/*  var icons = {
+    shoabe: {
+      icon:'shoabe.jpg';
+    }
+    pedro {
+      icon:'pedro.jpg';
+    }
+    arsalan {
+      icon:'arsalan.jpg'
+    }
+  }
+*/
 
+  var image = 'http://maps.gstatic.com/mapfiles/ridefinder-images/mm_20_purple.png';
   marker = new google.maps.Marker({
     map:map,
     draggable:true,
     animation: google.maps.Animation.DROP,
-    position: parliament
-  });
-  google.maps.event.addListener(marker, 'click', toggleBounce);
+    position: toronto,
+    icon: image,
+    title:"Hello World!"
+    });
+    google.maps.event.addListener(marker, 'click', toggleBounce);
+    
+    
 }
 
 function toggleBounce() {
