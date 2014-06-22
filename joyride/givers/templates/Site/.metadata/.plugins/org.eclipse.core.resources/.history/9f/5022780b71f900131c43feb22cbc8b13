@@ -1,0 +1,8 @@
+  $(document).ready(function(){
+      $("#main").height($(window).height());
+      $("#main").width($(window).width());
+          $(window).resize(function(){
+              $("#main").height($(window).height());
+              $("#main").width($(window).width());
+      });
+  });

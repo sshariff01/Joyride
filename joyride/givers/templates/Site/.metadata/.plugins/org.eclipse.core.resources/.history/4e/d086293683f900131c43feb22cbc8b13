@@ -1,0 +1,38 @@
+body {
+  padding-top: 50px;
+}
+.starter-template {
+  padding-top: 25%;
+  padding-bottom: 30%;
+  text-align: center;
+}
+
+.main{
+	background-image: url('../img/mainBG.jpg');
+	background-size: cover;
+	
+}
+
+.panel{
+	margin:0 auto;
+	width: 60%;
+	min-width: 150px;
+	max-width: 320px;
+}
+
+.heading{
+	background-color: rgb(41, 41, 41);
+}
+
+.container{
+	margin: 0 auto;
+	min-height: 
+}
+.main-text{
+	padding-top: 30%;
+	text-align: center;
+	margin:0 auto;
+	color: rgb(254, 254,254);
+	text-shadow: 3px 2px black;
+	
+}
