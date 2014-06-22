@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from givers.models import Giver
 
 #import urllib2
 #import json
@@ -12,6 +13,13 @@ def index(request):
 
 def search(request):
     return render(request, 'search.html')
+
+def post_user(request):
+    fbID = request.POST.get('fb_id', False).encode('utf8')+"0006"
+    g = Giver(fb_id=fbID, lng_start="-79.645825", lat_start="43.722598", lng_end="-79.258499", lat_end="43.884701")
+    g.save()
+    return render(request, 'index.html')
+
 
 
 #def facebook_login(request):
