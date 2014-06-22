@@ -1,7 +1,0 @@
-  $(document).ready(function(){
-      $("#carousel-inner").height($(window).height());
-      $("#carousel-inner").height($(window).width());
-          $(window).resize(function(){
-              $("#carousel-inner").height($(window).height());
-      });
-  });

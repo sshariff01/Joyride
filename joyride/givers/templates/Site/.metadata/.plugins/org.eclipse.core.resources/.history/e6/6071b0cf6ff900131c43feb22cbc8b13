@@ -1,6 +1,0 @@
-  $(document).ready(function(){
-      $("#main").height($(window).height());
-          $(window).resize(function(){
-              $("#main").height($(window).height());
-      });
-  });
