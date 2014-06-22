@@ -1,0 +1,22 @@
+body {
+  padding-top: 50px;
+}
+.starter-template {
+  padding: 40px 15px;
+  text-align: center;
+}
+
+.main{
+	background-image: url('../img/mainBG.jpg');
+	background-size: cover;
+	
+}
+
+.panel{
+	margin:0 auto;
+	width: 30%;
+}
+
+.panel-heading{
+	background-color: rgb(41, 41, 41);
+}

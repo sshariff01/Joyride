@@ -5,7 +5,7 @@
     <ignored path="joyride.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/index.html" changelist="19fd5be2-2288-4a5a-9e1e-288a301330ce" time="1403401004302" ignored="false" />
-    <file path="/views.py" changelist="19fd5be2-2288-4a5a-9e1e-288a301330ce" time="1403404178266" ignored="false" />
+    <file path="/views.py" changelist="19fd5be2-2288-4a5a-9e1e-288a301330ce" time="1403405890472" ignored="false" />
     <file path="/search.html" changelist="19fd5be2-2288-4a5a-9e1e-288a301330ce" time="1403368613923" ignored="false" />
     <file path="/urls.py" changelist="19fd5be2-2288-4a5a-9e1e-288a301330ce" time="1403391921840" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -53,7 +53,7 @@
       <file leaf-file-name="views.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/givers/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="21" selection-start="351" selection-end="351" vertical-scroll-proportion="0.4712042">
+            <state line="32" column="24" selection-start="1549" selection-end="1549" vertical-scroll-proportion="0.7251309">
               <folding>
                 <element signature="e#0#55#0" expanded="true" />
               </folding>
@@ -352,7 +352,7 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298217" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.11426256" sideWeight="0.646789" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.35321102" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.35321102" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32874617" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32874617" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -511,7 +511,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/givers/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="21" selection-start="351" selection-end="351" vertical-scroll-proportion="0.4712042">
+        <state line="32" column="24" selection-start="1549" selection-end="1549" vertical-scroll-proportion="0.7251309">
           <folding>
             <element signature="e#0#55#0" expanded="true" />
           </folding>

@@ -1,0 +1,19 @@
+body {
+  padding-top: 50px;
+}
+.starter-template {
+  padding: 40px 15px;
+  text-align: center;
+}
+
+.main{
+	background-image: url('../img/mainBG.jpg');
+	background-size: cover;
+	
+}
+
+.panel{
+	top: 50%;
+	margin:0 auto;
+	width: 30%;
+}

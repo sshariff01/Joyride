@@ -1,0 +1,6 @@
+  $(document).ready(function(){
+      $(".starter-template").height($(window).height());
+          $(window).resize(function(){
+              $(".starter.template").height($(window).height());
+      });
+  });

@@ -1,0 +1,6 @@
+  $(document).ready(function(){
+      $("#carousel-example-generic").height($(window).height());
+          $(window).resize(function(){
+              $("#carousel-example-generic").height($(window).height());
+      });
+  });
