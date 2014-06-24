@@ -80,15 +80,19 @@ def search(request, lat_start="43.722598", lng_start="-79.645825", lat_end="43.8
 
     tupleOfDicts = []
     count=0
+
+    #graph.facebook.com/me/13618575/picture?redirect=false
+
     for i in range(0, nearby_givers.__len__(), 1):
         dict = {
-             "fb_id" : giver_fb_id[count].encode('utf8'),
-             "name" : giver_names[count].encode('utf8'),
-             "rating" : giver_ratings[count],
-             "lat_start" : giver_lat_start[count].encode('utf8'),
-             "lat_end" : giver_lat_end[count].encode('utf8'),
-             "lng_start" : giver_lng_start[count].encode('utf8'),
-             "lng_end" : giver_lng_end[count].encode('utf8')
+             "fb_id" : giver_fb_id[i].encode('utf8'),
+             "fb_picture" : getFacebookPictureUrl("https://graph.facebook.com/v2.0/" + giver_fb_id[i].encode('utf8') + "/picture"),
+             "name" : giver_names[i].encode('utf8'),
+             "rating" : giver_ratings[i],
+             "lat_start" : giver_lat_start[i].encode('utf8'),
+             "lat_end" : giver_lat_end[i].encode('utf8'),
+             "lng_start" : giver_lng_start[i].encode('utf8'),
+             "lng_end" : giver_lng_end[i].encode('utf8')
          }
         tupleOfDicts.append(dict)
         count += 1
@@ -101,6 +105,14 @@ def search(request, lat_start="43.722598", lng_start="-79.645825", lat_end="43.8
     end_lng = start_location["lng"]
     vars = { "start_lat" : start_lat,  "start_lng" : start_lng,  "end_lat" : end_lat, "end_lng" : end_lng, "dump" : dump}
     return render(request, 'index.html', vars)
+
+def getFacebookPictureUrl(request_url):
+    response = urllib2.urlopen(request_url)
+    return response.url
+    # response_data = response.read()
+    # data = json.loads(response_data)
+    # pictureUrl = data['data']['url']
+    # return pictureUrl
 
 
 def post_user(request):
