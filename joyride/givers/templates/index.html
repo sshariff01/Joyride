@@ -52,16 +52,7 @@
             }
 
             function addMarkers() {
-              var locations = [
-                ['Shams Shafiq', 43.588918, -79.665297],
-                ['Chris Zeng', 43.545602, -79.599496],
-                ['Konrad Zielinski', 43.527283, -79.617048],
-                ['Walid Rahman', 43.633328, -79.619855],
-                ['Marc Roopchand', 43.634435, -79.597916],
-                ['Aren Patel', 43.638748, -79.601251],
-                ['Chinmay Raval', 43.639266, -79.590719]
-              ];
-
+              {% if dump %}
               var json = "{{ dump }}";
               var objJson = JSON.parse(JSON.stringify(json));
               objJson = JSON.parse(objJson.replace(/&quot;/g,'"'));
@@ -70,21 +61,25 @@
               var bounds = map.getBounds();
               var southWest = bounds.getSouthWest();
               var northEast = bounds.getNorthEast();
-              var lngSpan = northEast.lng() - southWest.lng();
-              var latSpan = northEast.lat() - southWest.lat();
               for (var i = 0; i < objJson.length; i++) {
-                var latLng = new google.maps.LatLng(objJson[i].lat_start, objJson[i].lng_start);
+                /*var img = $('<img />', {id: 'image'+i, src : 'https://graph.facebook.com/v2.0/545547692/picture'});
+                img.appendTo('body');
+                $('#image'+i).css('border-radius', '55px');
+
                 var iconImg = objJson[i].fb_picture;
+                */
+                var latLng = new google.maps.LatLng(objJson[i].lat_start, objJson[i].lng_start);
                 var marker = new google.maps.Marker({
                   position: latLng,
-                  icon: iconImg,
+                  icon: "http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=%E2%80%A2|7FB5EB",
                   map: map
                 });
               }
-
+              {% endif %}
               var latLng = new google.maps.LatLng('{{ start_lat }}', '{{ start_lng }}');
               var marker = new google.maps.Marker({
                 position: latLng,
+                icon: "http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=%E2%80%A2|FE7569",
                 map: map
               });
             }

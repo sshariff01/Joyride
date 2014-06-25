@@ -6,12 +6,10 @@ import urllib2
 
 # Create your views here.
 def index(request):
-    if request.method == 'GET':
-        return render(request, 'index.html')
-    if request.method == 'POST':
-        return render(request, 'search.html')
-
-    return render(request, 'index.html')
+    start_lat="43.722598"
+    start_lng="-79.645825"
+    data = { "start_lat" : start_lat,  "start_lng" : start_lng}
+    return render(request, 'index.html', data)
 
 
 
@@ -103,8 +101,8 @@ def search(request, lat_start="43.722598", lng_start="-79.645825", lat_end="43.8
     start_lng = start_location["lng"]
     end_lat = start_location["lat"]
     end_lng = start_location["lng"]
-    vars = { "start_lat" : start_lat,  "start_lng" : start_lng,  "end_lat" : end_lat, "end_lng" : end_lng, "dump" : dump}
-    return render(request, 'index.html', vars)
+    data = { "start_lat" : start_lat,  "start_lng" : start_lng,  "end_lat" : end_lat, "end_lng" : end_lng, "dump" : dump}
+    return render(request, 'index.html', data)
 
 def getFacebookPictureUrl(request_url):
     response = urllib2.urlopen(request_url)
