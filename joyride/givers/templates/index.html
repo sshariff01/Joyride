@@ -59,8 +59,9 @@
               //alert(objJson);
 
               var bounds = map.getBounds();
-              var southWest = bounds.getSouthWest();
-              var northEast = bounds.getNorthEast();
+              var infowindow = new google.maps.InfoWindow();
+{#              var southWest = bounds.getSouthWest();#}
+{#              var northEast = bounds.getNorthEast();#}
               for (var i = 0; i < objJson.length; i++) {
                 /*var img = $('<img />', {id: 'image'+i, src : 'https://graph.facebook.com/v2.0/545547692/picture'});
                 img.appendTo('body');
@@ -68,20 +69,31 @@
 
                 var iconImg = objJson[i].fb_picture;
                 */
+                var contentString = "<div>This is " + objJson[i].name + "</div><br/>" +
+                        "<img style='height: 50px; width: 50px;' src='https://graph.facebook.com/v2.0/" + objJson[i].fb_id + "/picture' />";
                 var latLng = new google.maps.LatLng(objJson[i].lat_start, objJson[i].lng_start);
+
+{#                var infowindow = new google.maps.InfoWindow({#}
+{#                      content: contentString#}
+{#                  });#}
                 var marker = new google.maps.Marker({
-                  position: latLng,
-                  icon: "http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=%E2%80%A2|7FB5EB",
-                  map: map
+                      position: latLng,
+                      icon: "http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=%E2%80%A2|7FB5EB",
+                      map: map,
+                      info: contentString
+                  });
+                google.maps.event.addListener(marker, 'click', function() {
+                    infowindow.setContent(this.info);
+                    infowindow.open(map, this);
                 });
               }
               {% endif %}
               var latLng = new google.maps.LatLng('{{ start_lat }}', '{{ start_lng }}');
               var marker = new google.maps.Marker({
-                position: latLng,
-                icon: "http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=%E2%80%A2|FE7569",
-                map: map
-              });
+                    position: latLng,
+                    icon: "http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=%E2%80%A2|FE7569",
+                    map: map
+                });
             }
             google.maps.event.addDomListener(window, 'load', initialize);
         </script>

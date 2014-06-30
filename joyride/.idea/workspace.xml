@@ -4,7 +4,7 @@
     <list default="true" id="19fd5be2-2288-4a5a-9e1e-288a301330ce" name="Default" comment="" />
     <ignored path="joyride.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/index.html" changelist="19fd5be2-2288-4a5a-9e1e-288a301330ce" time="1403585593884" ignored="false" />
+    <file path="/index.html" changelist="19fd5be2-2288-4a5a-9e1e-288a301330ce" time="1404159080732" ignored="false" />
     <file path="/views.py" changelist="19fd5be2-2288-4a5a-9e1e-288a301330ce" time="1404155248261" ignored="false" />
     <file path="/search.html" changelist="19fd5be2-2288-4a5a-9e1e-288a301330ce" time="1403368613923" ignored="false" />
     <file path="/urls.py" changelist="19fd5be2-2288-4a5a-9e1e-288a301330ce" time="1403391921840" ignored="false" />
@@ -33,19 +33,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="views.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="views.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/givers/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="109" column="23" selection-start="4699" selection-end="4699" vertical-scroll-proportion="0.6139767">
+            <state line="83" column="50" selection-start="3553" selection-end="3553" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/givers/templates/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="71" column="20" selection-start="2805" selection-end="2805" vertical-scroll-proportion="-16.875">
+            <state line="72" column="37" selection-start="2882" selection-end="2882" vertical-scroll-proportion="0.36395147">
               <folding />
             </state>
           </provider>
@@ -66,15 +66,15 @@
         <option value="$PROJECT_DIR$/givers/models.py" />
         <option value="$PROJECT_DIR$/joyride/urls.py" />
         <option value="$PROJECT_DIR$/givers/templates/css/main.css" />
-        <option value="$PROJECT_DIR$/givers/templates/index.html" />
         <option value="$PROJECT_DIR$/givers/views.py" />
+        <option value="$PROJECT_DIR$/givers/templates/index.html" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="1280" />
     <option name="y" value="-449" />
-    <option name="width" value="960" />
+    <option name="width" value="1920" />
     <option name="height" value="1080" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
@@ -318,14 +318,14 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1280" y="-449" width="960" height="1080" extended-state="0" />
+    <frame x="1280" y="-449" width="1920" height="1080" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298217" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1619256" sideWeight="0.66875" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.078975454" sideWeight="0.66875" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.33125" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32874617" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -502,16 +502,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/givers/templates/index.html">
+    <entry file="file://$PROJECT_DIR$/givers/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="71" column="20" selection-start="2805" selection-end="2805" vertical-scroll-proportion="-16.875">
+        <state line="83" column="50" selection-start="3553" selection-end="3553" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/givers/views.py">
+    <entry file="file://$PROJECT_DIR$/givers/templates/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="109" column="23" selection-start="4699" selection-end="4699" vertical-scroll-proportion="0.6139767">
+        <state line="72" column="37" selection-start="2882" selection-end="2882" vertical-scroll-proportion="0.36395147">
           <folding />
         </state>
       </provider>
