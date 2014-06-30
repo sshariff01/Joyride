@@ -76,7 +76,7 @@ def search(request, lat_start="43.722598", lng_start="-79.645825", lat_end="43.8
             giver_lng_end.append(giver.lng_end)
 
 
-    tupleOfDicts = []
+    arrayOfDicts = []
     count=0
 
     #graph.facebook.com/me/13618575/picture?redirect=false
@@ -92,10 +92,11 @@ def search(request, lat_start="43.722598", lng_start="-79.645825", lat_end="43.8
              "lng_start" : giver_lng_start[i].encode('utf8'),
              "lng_end" : giver_lng_end[i].encode('utf8')
          }
-        tupleOfDicts.append(dict)
+        arrayOfDicts.append(dict)
         count += 1
 
-    dump = json.dumps(tupleOfDicts)
+    sortedList = sorted(arrayOfDicts, key=lambda k: k['rating'], reverse=True)
+    dump = json.dumps(sortedList[:5])
 
     start_lat = start_location["lat"]
     start_lng = start_location["lng"]
