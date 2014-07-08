@@ -11,29 +11,16 @@
 		
         <!-- Place favicon.ico and apple-touch-icon(s) in the root directory -->
 
-        <link rel="stylesheet" href="{% static 'css/normalize.css' %}">
-        <link rel="stylesheet" href="{% static 'css/main.css' %}">
+        <!-- <link rel="stylesheet" href="{#% static 'css/normalize.css' %#}"> -->
+        <!--<link rel="stylesheet" href="{#% static 'css/main.css' %#}">-->
         
         <!-- Latest compiled and minified CSS -->
 		<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
 		
 		<!-- Optional theme -->
 		<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
-		<style>
-            html, body {
 
-                width: 100%;
-                
-                margin: 0px;
-                padding: 0px;
-            }
-            #map-canvas {
-                 max-height: 500px;
-                 max-width: 75%;
-                 margin: 0 auto;
-             }
-        </style>
-        <link rel="stylesheet" href="{% static 'css/custom.css' %}">
+        <!-- <link rel="stylesheet" href="{#% static 'css/custom.css' %#}"> -->
         <script>window.jQuery || document.write("<script src={% static 'js/vendor/jquery-2.1.1.min.js' %}><\/script>")</script>
 
         <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
@@ -143,320 +130,237 @@
             });  //end main func
             */
         </script>
-             
-        
-    </head>
-    <body>
-<script>
-  // This is called with the results from from FB.getLoginStatus().
-  function statusChangeCallback(response) {
-    console.log('statusChangeCallback');
-    console.log(response);
-    // The response object is returned with a status field that lets the
-    // app know the current login status of the person.
-    // Full docs on the response object can be found in the documentation
-    // for FB.getLoginStatus().
-    if (response.status === 'connected') {
-      // Logged into your app and Facebook.
-      testAPI();
-    } else if (response.status === 'not_authorized') {
-      // The person is logged into Facebook, but not your app.
-      document.getElementById('status').innerHTML = 'Please log ' +
-        'into this app.';
-    } else {
-      // The person is not logged into Facebook, so we're not sure if
-      // they are logged into this app or not.
-      document.getElementById('status').innerHTML = 'Please log ' +
-        'into Facebook.';
-    }
-  }
 
-  // This function is called when someone finishes with the Login
-  // Button.  See the onlogin handler attached to it in the sample
-  // code below.
-  function checkLoginState() {
-    FB.getLoginStatus(function(response) {
-      statusChangeCallback(response);
-    });
-  }
-
-  window.fbAsyncInit = function() {
-  FB.init({
-    appId      : '1486567314893292',
-    cookie     : true,  // enable cookies to allow the server to access
-                        // the session
-    xfbml      : true,  // parse social plugins on this page
-    version    : 'v2.0' // use version 2.0
-  });
-
-  // Now that we've initialized the JavaScript SDK, we call
-  // FB.getLoginStatus().  This function gets the state of the
-  // person visiting this page and can return one of three states to
-  // the callback you provide.  They can be:
-  //
-  // 1. Logged into your app ('connected')
-  // 2. Logged into Facebook, but not your app ('not_authorized')
-  // 3. Not logged into Facebook and can't tell if they are logged into
-  //    your app or not.
-  //
-  // These three cases are handled in the callback function.
-
-  FB.getLoginStatus(function(response) {
-    statusChangeCallback(response);
-  });
-
-  };
-
-  // Load the SDK asynchronously
-  (function(d, s, id) {
-    var js, fjs = d.getElementsByTagName(s)[0];
-    if (d.getElementById(id)) return;
-    js = d.createElement(s); js.id = id;
-    js.src = "//connect.facebook.net/en_US/sdk.js";
-    fjs.parentNode.insertBefore(js, fjs);
-  }(document, 'script', 'facebook-jssdk'));
-
-  // Here we run a very simple test of the Graph API after login is
-  // successful.  See statusChangeCallback() for when this call is made.
-  function testAPI() {
-    console.log('Welcome!  Fetching your information.... ');
-    var fbID = FB.getAuthResponse().userID
-    var accessToken = FB.getAuthResponse().accessToken
-    FB.api('/me', function(response) {
-      console.log('Successful login for: ' + response.name);
-      document.getElementById('status').innerHTML = '';
-      document.getElementById('search_form_fb_id').value = FB.getAuthResponse().userID;
-      document.getElementById('fb_access_token').value = FB.getAuthResponse().accessToken;
-
-      $.ajax({
-          type: "POST",
-          url: "/post_user/",
-          data: {
-            fb_id: fbID,
-            accessToken: accessToken,
-            csrfmiddlewaretoken: document.getElementsByName('csrfmiddlewaretoken')[0].value
-          },
-          success: null,
-          dataType: String
-      });
-    });
-  }
-</script>
-
-        <!--[if lt IE 8]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
-
-        <!-- Add your site or application content here -->
-       	<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-	      <div class="container">
-	        <div class="navbar-header">
-	          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-	            <span class="sr-only">Toggle navigation</span>
-	            <span class="icon-bar"></span>
-	            <span class="icon-bar"></span>
-	            <span class="icon-bar"></span>
-	          </button>
-	          <a id="home" class="navbar-brand" href="#main"></a>
-	        </div>
-	        <div class="collapse navbar-collapse">
-	          <ul class="nav navbar-nav pull-right">
-	          	<li><a href="#map-canvas">Map</a></li>
-	            <li><a href="#login">Users</a></li>
-	            <li><a>
-                    <div class="fb-login-button " data-max-rows="1" data-size="large" data-show-faces="false" data-auto-logout-link="true"></div>
-
-                    <div id="status">
-                    
-                    </div>
-                    </a>
-	            </li>
-	          </ul>
-	        </div><!--/.nav-collapse -->
-	      </div>
-	    </div>
-	
-		<div id="main" class="main">
-			<div class="container">
-				<div class="main-text page-header">
-					<img src="{% static 'img/logo.png' %}">
-			    	<h1>Carpool to your destination!</h1>
-			    	<h3>Destination is making it easy to find people near you!</h3>
-		    	</div>
-		    	<div class="center">
-			    	<form id="destinationForm" action="/search/" role="form" class="form-inline" method="post" >
-                        {% csrf_token %}
-                        {{ form.non_field_errors }}
-                        {{ form.as_p }}
-			    		<div class="form-group">
-			    			<input type="text" class="form-control"  id="StartingLocation" name="StartingLocation" placeholder="Starting from postal code___">
-			    		</div>
-			    		<div class="form-group">
-			    			<input type="text" class="form-control"  id="Destination" name="Destination" placeholder="Ending at postal code___">
-			    		</div>
-                        <input id="search_form_fb_id" type="hidden" name="search_form_fb_id" value="">
-			    		<button id="searchSubmit" type="submit" class="btn btn-primary" name="search_button">Search</button>
-			    	</form>
-		    	</div>
-	    	</div>
-	    </div>
-
-        <!--<div id="map-container" class="container"></div>-->
-        <div id="map-container" class="container">
-                  <div class="panel-body">
-                        <div class="container">
-                            <div id="map-container" style="height: 100%;">
-                                <div id="map-canvas" style="height: 550px; margin: 0 auto;"></div>
-                            </div>
-                        </div>
-                  </div>
-        </div>
-
-
-        <div id="login" class="container">
-	      <div class="starter-template">
-		      <div class="panel panel-default">
-				  <div class="panel-body">
-				  	<div id="slugline" class="align-center">
-					  	<h2>Sluggers</h2>
-					  	<hr>
-					  	<div class="row">
-						  	<div id="name" class="col-sm-4">
-						  		<h3>John Smith</h3>
-						  	</div>
-						  	<div id="name" class="col-sm-4">
-						  		<h3>Mary Smith</h3>
-						  	</div>
-						  	<div id="name" class="col-sm-4">
-						  		<h3>Justin Bieber</h3>
-						  	</div>
-					  	</div>
-
-					  	<div class="row profile" >
-					  		<img style="height:350px; " class="col-sm-4 col-md-4 img-circle" src="http://upload.wikimedia.org/wikipedia/commons/8/83/Young_man_with_dimples.jpg" alt="profile">
-					  		<img style="height:350px" class="col-sm-4 col-md-4 img-circle" src="http://colouredcollective.files.wordpress.com/2012/05/rywheadshot2012.jpg?w=558" alt="profile">
-					  		<img style="height:350px" class="col-sm-4 col-md-4 img-circle" src="http://assets-s3.usmagazine.com/uploads/assets/articles/69828-justin-bieber-arrest-stars-tweet-reactions-mugshot-jokes/1390500405_justin-bieber-mugshot-467.jpg" alt="profile">
-					  	</div>
-						<div class="row profile">
-						   <div class="col-md-4 ">
-							<div class="table-responsive">
-								<table class="table-condensed">
-									<thead>
-										<th></th>
-									</thead>
-									<tr>
-										<td><strong>Starting Distance</strong></td><td>9 km</td>
-									</tr>
-									<tr>
-										<td><strong>Destination Distance</strong></td><td>1 km</td>
-									</tr>
-									<tr>
-										<td><strong>Rating</strong></td>
-										<td>
-										    <span class="glyphicon glyphicon-star"></span>
-										    <span class="glyphicon glyphicon-star"></span>
-										    <span class="glyphicon glyphicon-star"></span>
-										    <span class="glyphicon glyphicon-star"></span>
-										    <span class="glyphicon glyphicon-star-empty"></span>
-										</td>
-									</tr>
-									<tr>
-										<td><strong>Endorsements</strong></td><td>5</td>
-									</tr>
-								</table>
-							</div>
-							<div id="map-profile"></div>
-						  </div>
-						   <div class="col-md-4 ">
-							<div class="table-responsive">
-								<table class="table-condensed">
-									<thead>
-										<th></th>
-									</thead>
-									<tr>
-										<td><strong>Starting Distance</strong></td><td>9 km</td>
-									</tr>
-									<tr>
-										<td><strong>Destination Distance</strong></td><td>1 km</td>
-									</tr>
-									<tr>
-										<td><strong>Rating</strong></td>
-										<td>
-										    <span class="glyphicon glyphicon-star"></span>
-										    <span class="glyphicon glyphicon-star"></span>
-										    <span class="glyphicon glyphicon-star"></span>
-										    <span class="glyphicon glyphicon-star"></span>
-										    <span class="glyphicon glyphicon-star-empty"></span>
-										</td>
-									</tr>
-									<tr>
-										<td><strong>Endorsements</strong></td><td>5</td>
-									</tr>
-								</table>
-							</div>
-							<div id="map-profile"></div>
-						  </div>
-						   <div class="col-md-4 ">
-							<div class="table-responsive">
-								<table class="table-condensed">
-									<thead>
-										<th></th>
-									</thead>
-									<tr>
-										<td><strong>Starting Distance</strong></td><td>9 km</td>
-									</tr>
-									<tr>
-										<td><strong>Destination Distance</strong></td><td>1 km</td>
-									</tr>
-									<tr>
-										<td><strong>Rating</strong></td>
-										<td>
-										    <span class="glyphicon glyphicon-star-empty"></span>
-										    <span class="glyphicon glyphicon-star-empty"></span>
-										    <span class="glyphicon glyphicon-star-empty"></span>
-										    <span class="glyphicon glyphicon-star-empty"></span>
-										    <span class="glyphicon glyphicon-star-empty"></span>
-										</td>
-									</tr>
-									<tr>
-										<td><strong>Endorsements</strong></td><td>1000</td>
-									</tr>
-								</table>
-							</div>
-							<div id="map-profile"></div>
-						  </div>
-						</div>
-
-
-
-				  </div>
-			  </div>
-	      </div>
-		</div><!-- /.container -->
-
-        
-
-        
-        <!-- Latest compiled and minified JavaScript -->
-		<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>	
-        <script src="{% static 'js/plugins.js' %}"></script>
-        <script src="{% static 'js/main.js' %}"></script>
-
-        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>
-            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-            e.src='//www.google-analytics.com/analytics.js';
-            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-            ga('create','UA-XXXXX-X');ga('send','pageview');
+          function loginUser() {
+              FB.login(
+                  function(response) {
+                      checkLoginState(); //This is a call to a different function...
+                  },
+                {scope:'user_likes, offline_access'}
+              );
+          }
+          // This is called with the results from from FB.getLoginStatus().
+          function statusChangeCallback(response) {
+            console.log('statusChangeCallback');
+            console.log(response);
+            // The response object is returned with a status field that lets the
+            // app know the current login status of the person.
+            // Full docs on the response object can be found in the documentation
+            // for FB.getLoginStatus().
+            if (response.status === 'connected') {
+              // Logged into your app and Facebook.
+              testAPI();
+            } else if (response.status === 'not_authorized') {
+              showLogin();
+              // The person is logged into Facebook, but not your app.
+{#              document.getElementById('status').innerHTML = 'Please log ' +#}
+{#                'into this app.';#}
+            } else {
+              showLogin();
+              // The person is not logged into Facebook, so we're not sure if
+              // they are logged into this app or not.
+{#              document.getElementById('status').innerHTML = 'Please log ' +#}
+{#                'into Facebook.';#}
+            }
+          }
+
+          // This function is called when someone finishes with the Login
+          // Button.  See the onlogin handler attached to it in the sample
+          // code below.
+          function checkLoginState() {
+            FB.getLoginStatus(function(response) {
+              statusChangeCallback(response);
+            });
+          }
+
+          window.fbAsyncInit = function() {
+          FB.init({
+            appId      : '1486567314893292',
+            cookie     : true,  // enable cookies to allow the server to access
+                                // the session
+            xfbml      : true,  // parse social plugins on this page
+            version    : 'v2.0' // use version 2.0
+          });
+
+          // Now that we've initialized the JavaScript SDK, we call
+          // FB.getLoginStatus().  This function gets the state of the
+          // person visiting this page and can return one of three states to
+          // the callback you provide.  They can be:
+          //
+          // 1. Logged into your app ('connected')
+          // 2. Logged into Facebook, but not your app ('not_authorized')
+          // 3. Not logged into Facebook and can't tell if they are logged into
+          //    your app or not.
+          //
+          // These three cases are handled in the callback function.
+
+          FB.getLoginStatus(function(response) {
+            statusChangeCallback(response);
+          });
+
+          };
+
+          // Load the SDK asynchronously
+          (function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/en_US/sdk.js";
+            fjs.parentNode.insertBefore(js, fjs);
+          }(document, 'script', 'facebook-jssdk'));
+
+          // Here we run a very simple test of the Graph API after login is
+          // successful.  See statusChangeCallback() for when this call is made.
+          function testAPI() {
+            document.getElementById("login-btn").style.display = "none";
+            document.getElementById("login-container").style.display = "none";
+            console.log('Welcome!  Fetching your information.... ');
+            var fbID = FB.getAuthResponse().userID
+            var accessToken = FB.getAuthResponse().accessToken
+            FB.api('/me', function(response) {
+              console.log('Successful login for: ' + response.name);
+              document.getElementById('status').innerHTML = '';
+              document.getElementById('search_form_fb_id').value = FB.getAuthResponse().userID;
+{#              document.getElementById('fb_access_token').value = FB.getAuthResponse().accessToken;#}
+
+              $.ajax({
+                  type: "POST",
+                  url: "/post_user/",
+                  data: {
+                    fb_id: fbID,
+                    accessToken: accessToken,
+                    csrfmiddlewaretoken: document.getElementsByName('csrfmiddlewaretoken')[0].value
+                  },
+                  success: null,
+                  dataType: String
+              });
+            });
+          }
+
+          function showLogin() {
+            document.getElementById("login-container").style.display = "block";
+            document.getElementById("login-btn").style.display = "block";
+
+          }
         </script>
 
-        <form action="#" method="post" id="dummyform">
-            {% csrf_token %}
-            {{ form.non_field_errors }}
-            {{ form.as_p }}
+        <style>
+            body {
+                background-color: gray;
+            }
+
+            .header-container {
+                min-height: 60px;
+                background-color: black;
+            }
+
+            #header {
+                width: 82%;
+                min-width: 600px;
+                margin: 0 auto;
+                padding: 15px;
+
+            }
+
+            .container {
+                height:550px;
+                width:82%;
+                background-color: white;
+                padding: 0;
+                margin: 0 auto;
+                position: relative;
+                top:0;
+                right:0;
+                bottom:0;
+                left:0;
+                border-radius: 5px;
+            }
+
+            #map-canvas {
+                height: 530px;
+                margin: 10px;
+            }
+
+            #login-container {
+                height:100%;
+                width:100%;
+                background-color: black;
+                padding: 0;
+                margin: auto;
+                position: absolute;
+                top:0;
+                right:0;
+                bottom:0;
+                left:0;
+                z-index:100;
+                opacity:0.6;
+            }
+
+            #login-btn {
+                width:400px;
+                height:76px;
+                padding: 0;
+                z-index:100;
+            }
+
+            .Absolute-Center {
+              margin: auto;
+              position: absolute;
+              top: 0; left: 0; bottom: 40%; right: 0;
+            }
+
+
+        </style>
+    </head>
+    <body>
+        <div id="login-container" style="display:none;"></div>
+        <div id="login-btn" class="Absolute-Center" style="display:none;">
+            <a href="#" onClick="loginUser(); return false;"><img src={% static 'img/fb-btn.png' %} /></a>
+{#            <div style="position:absolute; margin:auto;" class="fb-login-button " data-max-rows="1" data-size="large" data-show-faces="false" data-auto-logout-link="true" onlogin="checkLoginState();"></div>#}
+{#            <div id="status"></div>#}
+        </div>
+        <div class="header-container" >
+            <div id="header" >
+                <div id="table-container">
+                    <table style="width: 100%;">
+                        <tr>
+                            <td>
+                                <div class="center" style="float:right;">
+                                    <form id="destinationForm" action="/search/" role="form" class="form-inline" method="post" >
+                                        {% csrf_token %}
+                                        {{ form.non_field_errors }}
+                                        {{ form.as_p }}
+                                        <div class="form-group">
+                                            <input type="text" class="form-control"  id="StartingLocation" name="StartingLocation" placeholder="Starting ZIP Code">
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" class="form-control"  id="Destination" name="Destination" placeholder="Ending ZIP Code">
+                                        </div>
+                                        <input id="search_form_fb_id" type="hidden" name="search_form_fb_id" value="">
+                                        <button id="searchSubmit" type="submit" class="btn btn-default" name="search_button">Search</button>
+                                    </form>
+                                </div>
+                            </td>
+{#                            <td>#}
+{#                                <div class="fb-login-button " data-max-rows="1" data-size="large" data-show-faces="false" data-auto-logout-link="true"></div>#}
+{#                                <div id="status"></div>#}
+{#                            </td>#}
+                        </tr>
+                    </table>
+                </div>
+
+
             </div>
-        </form>
+        </div>
+        <div id="map-container" class="map-container">
+            <div class="panel-body">
+                <div class="container">
+                    <div id="map">
+                        <div id="map-canvas"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </body>
 </html>
