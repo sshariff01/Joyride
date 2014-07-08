@@ -4,7 +4,7 @@
     <list default="true" id="19fd5be2-2288-4a5a-9e1e-288a301330ce" name="Default" comment="" />
     <ignored path="joyride.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/index.html" changelist="19fd5be2-2288-4a5a-9e1e-288a301330ce" time="1404862033034" ignored="false" />
+    <file path="/index.html" changelist="19fd5be2-2288-4a5a-9e1e-288a301330ce" time="1404863062109" ignored="false" />
     <file path="/views.py" changelist="19fd5be2-2288-4a5a-9e1e-288a301330ce" time="1404155248261" ignored="false" />
     <file path="/search.html" changelist="19fd5be2-2288-4a5a-9e1e-288a301330ce" time="1403368613923" ignored="false" />
     <file path="/urls.py" changelist="19fd5be2-2288-4a5a-9e1e-288a301330ce" time="1403391921840" ignored="false" />
@@ -45,12 +45,13 @@
       <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/givers/templates/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="250" column="65" selection-start="10824" selection-end="10824" vertical-scroll-proportion="0.32678822">
+            <state line="330" column="56" selection-start="13184" selection-end="13184" vertical-scroll-proportion="0.32678822">
               <folding>
                 <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#table#0;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#td#0;n#tr#0;n#table#0;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#td#1;n#tr#0;n#table#0;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -549,12 +550,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/givers/templates/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="250" column="65" selection-start="10824" selection-end="10824" vertical-scroll-proportion="0.32678822">
+        <state line="330" column="56" selection-start="13184" selection-end="13184" vertical-scroll-proportion="0.32678822">
           <folding>
             <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#table#0;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#td#0;n#tr#0;n#table#0;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#td#1;n#tr#0;n#table#0;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
