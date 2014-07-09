@@ -43,19 +43,22 @@
               var json = "{{ dump }}";
               var objJson = JSON.parse(JSON.stringify(json));
               objJson = JSON.parse(objJson.replace(/&quot;/g,'"'));
-              //alert(objJson);
 
-              var bounds = map.getBounds();
               var infowindow = new google.maps.InfoWindow();
-{#              var southWest = bounds.getSouthWest();#}
-{#              var northEast = bounds.getNorthEast();#}
+              var profilesContainer = $('.profiles-container');
               for (var i = 0; i < objJson.length; i++) {
-                /*var img = $('<img />', {id: 'image'+i, src : 'https://graph.facebook.com/v2.0/545547692/picture'});
-                img.appendTo('body');
-                $('#image'+i).css('border-radius', '55px');
+                var img = $('<img />', {id: 'image'+i, src : 'https://graph.facebook.com/v2.0/' + objJson[i].fb_id + '/picture'});
+                img.css('border-radius', '55px');
 
-                var iconImg = objJson[i].fb_picture;
-                */
+                var elem = $('<div />', {id: 'profile_'+i, class: 'profiles'});
+
+                img.appendTo(elem);
+                elem.appendTo(profilesContainer);
+
+
+
+{#                var iconImg = objJson[i].fb_picture;#}
+
                 var contentString = "<div>This is " + objJson[i].name + "</div><br/>" +
                         "<img style='height: 50px; width: 50px;' src='https://graph.facebook.com/v2.0/" + objJson[i].fb_id + "/picture' />";
                 var latLng = new google.maps.LatLng(objJson[i].lat_start, objJson[i].lng_start);
@@ -250,6 +253,7 @@
 {#                background-color: gray;#}
                 background-image: url({% static 'img/nyc_taxi.jpg' %});
                 background-size:cover;
+                background-attachment: fixed;
             }
 
             .header-container {
@@ -262,11 +266,12 @@
                 min-width: 600px;
                 margin: 0 auto;
                 padding: 15px;
+                z-index:99
 
             }
 
             .container {
-                height:550px;
+                height:500px;
                 width:82%;
                 background-color: white;
                 padding: 0;
@@ -280,7 +285,7 @@
             }
 
             #map-canvas {
-                height: 530px;
+                height: 480px;
                 margin: 10px;
             }
 
@@ -312,7 +317,17 @@
               top: 0; left: 0; bottom: 40%; right: 0;
             }
 
+            .profiles-container {
+                width:82%;
+                margin: 0 auto;
+            }
 
+            .profiles {
+                background-color: gainsboro;
+                height: 200px;
+                margin: 10px;
+                border-radius: 5px;
+            }
         </style>
     </head>
     <body>
@@ -329,7 +344,7 @@
                         <tr>
                             <td>
                                <div style="float:left;">
-                                   <img src={% static 'img/ridepool_white.png' %} height="60" />
+                                   <img src={% static 'img/ridepool_white.png' %} height="55" />
                                </div>
                             </td>
                             <td>
@@ -369,5 +384,6 @@
                 </div>
             </div>
         </div>
+        <div class="profiles-container"></div>
     </body>
 </html>
