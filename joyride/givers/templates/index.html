@@ -20,10 +20,19 @@
 		<!-- Optional theme -->
 		<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
 
+{#        <script src="//code.jquery.com/jquery-1.10.2.js"></script>#}
+
         <!-- <link rel="stylesheet" href="{#% static 'css/custom.css' %#}"> -->
         <script>window.jQuery || document.write("<script src={% static 'js/vendor/jquery-2.1.1.min.js' %}><\/script>")</script>
 
         <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+
+        <script>
+            $('.expand_0').click(function() {
+                $('.content_0').slideToggle('slow');
+            });
+        </script>
+
         <script>
             var map;
             function initialize() {
@@ -46,18 +55,26 @@
 
               var infowindow = new google.maps.InfoWindow();
               var profilesContainer = $('.profiles-container');
+              profilesContainer.append('<div class="datacollapse"></div>');
+              var divElem = $('.datacollapse')
+              divElem.appendTo(profilesContainer);
               for (var i = 0; i < objJson.length; i++) {
-                var img = $('<img />', {id: 'image'+i, src : 'https://graph.facebook.com/v2.0/' + objJson[i].fb_id + '/picture'});
-                img.css('border-radius', '55px');
-
-                var elem = $('<div />', {id: 'profile_'+i, class: 'profiles'});
-
-                img.appendTo(elem);
-                elem.appendTo(profilesContainer);
 
 
+                var profileHolder = $('<div />', {id:'image'+i+'_holder', class:'profiles'});
+                var img = $('<img />', {id: 'image'+i, class: 'profileImage', src : 'https://graph.facebook.com/v2.0/' + objJson[i].fb_id + '/picture?type=large', width: '200'});
 
-{#                var iconImg = objJson[i].fb_picture;#}
+                img.css('border-radius', '5px');
+
+                profileHolder.appendTo(divElem);
+                var bigTable = $('<table />').appendTo(profileHolder);
+                var bigRow = $('<tr />').appendTo(bigTable);
+                var firstCol = $('<td />').appendTo(bigRow);
+                img.appendTo(firstCol);
+
+                var secondCol = $('<td />', {valign: 'top'}).appendTo(bigRow);
+                secondCol.append('<div>'+objJson[i].name+'</div>');
+                secondCol.css('padding-left', '10px');
 
                 var contentString = "<div>This is " + objJson[i].name + "</div><br/>" +
                         "<img style='height: 50px; width: 50px;' src='https://graph.facebook.com/v2.0/" + objJson[i].fb_id + "/picture' />";
@@ -77,6 +94,7 @@
                     infowindow.open(map, this);
                 });
               }
+
               {% endif %}
               var latLng = new google.maps.LatLng('{{ start_lat }}', '{{ start_lng }}');
               var marker = new google.maps.Marker({
@@ -89,50 +107,6 @@
         </script>
 
         <script  src="{% static 'js/vendor/modernizr-2.8.0.min.js' %}"></script>
-
-        <!-- Form Submission Here Sending to Django -->
-        <script>
-            /*
-            $(document).ready(functin() {
-                $("#searchSubmit").on("click", function(event) {
-                    event.preventDefault()
-                    $.post("/search", {
-                       // set params and stuff
-                    }).then(function(data) {
-                        // do stuff with the returned data
-                    })
-                })
-            })
-            */
-            //var startingZip = $("#StartingLocation").val();
-            //var endingZip = $("#Destination").val();
-            /*$.ajax({
-                  type: "POST",
-                  url: "/search/",
-                  data: {
-                    csrfmiddlewaretoken: document.getElementsByName('csrfmiddlewaretoken')[0].value
-                  },
-                  success: "alert('Did it work?');",
-                  dataType: String
-              });
-            /*
-            jQuery(function() {
-                var form = jQuery("#destinationForm");
-                form.submit(function(e) {
-                //jQuery("#StartingLocation").attr('disabled',true)
-
-                jQuery("#map-canvas").load(
-                    //form.attr('action') + '#map-canvas', //the url that you're sending to in the backend
-                    form.serializeArray(), //send array of starting and ending location
-                    function(responseText, responseStatus) { //re-enable search button upon receiving response
-                            jQuery("#searchSubmit").attr('disabled', false)
-                    }
-                );
-                e.preventDefault(); 
-                }); //end function 2
-            });  //end main func
-            */
-        </script>
 
         <script>
           function loginUser() {
@@ -324,9 +298,10 @@
 
             .profiles {
                 background-color: gainsboro;
-                height: 200px;
+{#                height: 200px;#}
                 margin: 10px;
                 border-radius: 5px;
+                padding: 10px;
             }
         </style>
     </head>
@@ -334,6 +309,7 @@
         <div id="login-container" style="display:none;"></div>
         <div id="login-btn" class="Absolute-Center" style="display:none;">
             <a href="#" onClick="loginUser(); return false;"><img src={% static 'img/fb-btn.png' %} /></a>
+            <div id="status"></div>
 {#            <div style="position:absolute; margin:auto;" class="fb-login-button " data-max-rows="1" data-size="large" data-show-faces="false" data-auto-logout-link="true" onlogin="checkLoginState();"></div>#}
 {#            <div id="status"></div>#}
         </div>
