@@ -1,3 +1,278 @@
-<div>
-    <img src={{ fb_img }} >
-</div>
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Destination</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        {% load staticfiles %}
+
+        <!-- Place favicon.ico and apple-touch-icon(s) in the root directory -->
+
+        <!-- <link rel="stylesheet" href="{#% static 'css/normalize.css' %#}"> -->
+        <!--<link rel="stylesheet" href="{#% static 'css/main.css' %#}">-->
+
+        <!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+
+		<!-- Optional theme -->
+		<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
+
+{#        <script src="//code.jquery.com/jquery-1.10.2.js"></script>#}
+
+        <!-- <link rel="stylesheet" href="{#% static 'css/custom.css' %#}"> -->
+        <script>window.jQuery || document.write("<script src={% static 'js/vendor/jquery-2.1.1.min.js' %}><\/script>")</script>
+
+        <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+
+        <script  src="{% static 'js/vendor/modernizr-2.8.0.min.js' %}"></script>
+
+        <script>
+          function loginUser() {
+              FB.login(
+                  function(response) {
+                      checkLoginState(); //This is a call to a different function...
+                  },
+                {scope:'user_likes, offline_access'}
+              );
+          }
+          // This is called with the results from from FB.getLoginStatus().
+          function statusChangeCallback(response) {
+            console.log('statusChangeCallback');
+            console.log(response);
+            // The response object is returned with a status field that lets the
+            // app know the current login status of the person.
+            // Full docs on the response object can be found in the documentation
+            // for FB.getLoginStatus().
+            if (response.status === 'connected') {
+              // Logged into your app and Facebook.
+              testAPI();
+            } else if (response.status === 'not_authorized') {
+              showLogin();
+              // The person is logged into Facebook, but not your app.
+{#              document.getElementById('status').innerHTML = 'Please log ' +#}
+{#                'into this app.';#}
+            } else {
+              showLogin();
+              // The person is not logged into Facebook, so we're not sure if
+              // they are logged into this app or not.
+{#              document.getElementById('status').innerHTML = 'Please log ' +#}
+{#                'into Facebook.';#}
+            }
+          }
+
+          // This function is called when someone finishes with the Login
+          // Button.  See the onlogin handler attached to it in the sample
+          // code below.
+          function checkLoginState() {
+            FB.getLoginStatus(function(response) {
+              statusChangeCallback(response);
+            });
+          }
+
+          window.fbAsyncInit = function() {
+          FB.init({
+            appId      : '1486567314893292',
+            cookie     : true,  // enable cookies to allow the server to access
+                                // the session
+            xfbml      : true,  // parse social plugins on this page
+            version    : 'v2.0' // use version 2.0
+          });
+
+          // Now that we've initialized the JavaScript SDK, we call
+          // FB.getLoginStatus().  This function gets the state of the
+          // person visiting this page and can return one of three states to
+          // the callback you provide.  They can be:
+          //
+          // 1. Logged into your app ('connected')
+          // 2. Logged into Facebook, but not your app ('not_authorized')
+          // 3. Not logged into Facebook and can't tell if they are logged into
+          //    your app or not.
+          //
+          // These three cases are handled in the callback function.
+
+          FB.getLoginStatus(function(response) {
+            statusChangeCallback(response);
+          });
+
+          };
+
+          // Load the SDK asynchronously
+          (function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/en_US/sdk.js";
+            fjs.parentNode.insertBefore(js, fjs);
+          }(document, 'script', 'facebook-jssdk'));
+
+          // Here we run a very simple test of the Graph API after login is
+          // successful.  See statusChangeCallback() for when this call is made.
+          function testAPI() {
+            document.getElementById("login-btn").style.display = "none";
+            document.getElementById("login-container").style.display = "none";
+            console.log('Welcome!  Fetching your information.... ');
+            var fbID = FB.getAuthResponse().userID
+            var accessToken = FB.getAuthResponse().accessToken
+            FB.api('/me', function(response) {
+              console.log('Successful login for: ' + response.name);
+              document.getElementById('status').innerHTML = '';
+              document.getElementById('search_form_fb_id').value = FB.getAuthResponse().userID;
+{#              document.getElementById('fb_access_token').value = FB.getAuthResponse().accessToken;#}
+
+              $.ajax({
+                  type: "POST",
+                  url: "/post_user/",
+                  data: {
+                    fb_id: fbID,
+                    accessToken: accessToken,
+                    csrfmiddlewaretoken: document.getElementsByName('csrfmiddlewaretoken')[0].value
+                  },
+                  success: null,
+                  dataType: String
+              });
+            });
+          }
+
+          function showLogin() {
+            document.getElementById("login-container").style.display = "block";
+            document.getElementById("login-btn").style.display = "block";
+
+          }
+        </script>
+
+        <style>
+            body {
+{#                background-color: gray;#}
+                background-image: url({% static 'img/nyc_taxi.jpg' %});
+                background-size:cover;
+                background-attachment: fixed;
+            }
+
+            .header-container {
+                min-height: 60px;
+                background-color: black;
+            }
+
+            #header {
+                width: 82%;
+                min-width: 600px;
+                margin: 0 auto;
+                padding: 15px;
+                z-index:99
+
+            }
+
+            .container {
+                height:500px;
+                width:82%;
+                background-color: white;
+                padding: 0;
+                margin: 0 auto;
+                position: relative;
+                top:0;
+                right:0;
+                bottom:0;
+                left:0;
+                border-radius: 5px;
+            }
+
+            #map-canvas {
+                height: 480px;
+                margin: 10px;
+            }
+
+            #login-container {
+                height:100%;
+                width:100%;
+                background-color: black;
+                padding: 0;
+                margin: auto;
+                position: absolute;
+                top:0;
+                right:0;
+                bottom:0;
+                left:0;
+                z-index:100;
+                opacity:0.6;
+            }
+
+            #login-btn {
+                width:400px;
+                height:76px;
+                padding: 0;
+                z-index:100;
+            }
+
+            .Absolute-Center {
+              margin: auto;
+              position: absolute;
+              top: 0; left: 0; bottom: 40%; right: 0;
+            }
+
+            .profiles-container {
+                width:82%;
+                margin: 0 auto;
+            }
+
+            .profiles {
+                background-color: gainsboro;
+                margin: 10px;
+                border-radius: 5px;
+                padding: 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="login-container" style="display:none;"></div>
+        <div id="login-btn" class="Absolute-Center" style="display:none;">
+            <a href="#" onClick="loginUser(); return false;"><img src={% static 'img/fb-btn.png' %} /></a>
+            <div id="status"></div>
+{#            <div style="position:absolute; margin:auto;" class="fb-login-button " data-max-rows="1" data-size="large" data-show-faces="false" data-auto-logout-link="true" onlogin="checkLoginState();"></div>#}
+{#            <div id="status"></div>#}
+        </div>
+        <div class="header-container" >
+            <div id="header" >
+                <div id="table-container">
+                    <table style="width: 100%;">
+                        <tr>
+                            <td>
+                               <div style="float:left;">
+                                   <img src={% static 'img/ridepool_white.png' %} height="55" />
+                               </div>
+                            </td>
+                            <td>
+                                <div class="center" style="float:right;">
+                                    <form id="destinationForm" action="/search/" role="form" class="form-inline" method="post" >
+                                        {% csrf_token %}
+                                        {{ form.non_field_errors }}
+                                        {{ form.as_p }}
+                                        <div class="form-group">
+                                            <input type="text" class="form-control"  id="StartingLocation" name="StartingLocation" placeholder="Starting ZIP Code">
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" class="form-control"  id="Destination" name="Destination" placeholder="Ending ZIP Code">
+                                        </div>
+                                        <input id="search_form_fb_id" type="hidden" name="search_form_fb_id" value="">
+                                        <button id="searchSubmit" type="submit" class="btn btn-default" name="search_button">Search</button>
+                                    </form>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+
+
+            </div>
+        </div>
+        <div class="profiles-container">
+            <div class="profiles">
+                <img src={{ fb_img }} >
+            </div>
+        </div>
+    </body>
+</html>
+
+
