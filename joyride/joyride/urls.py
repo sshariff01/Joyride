@@ -12,8 +12,9 @@ urlpatterns = patterns('',
     # url(r'^blog/', include('blog.urls')),
 
     url(r'^$', giversviews.index, name='index'),
-    url(r'^index/', giversviews.index, name='index'), # include('givers.urls')),
-    url(r'^search/', giversviews.search, name='search'), # include('givers.urls')),
+    url(r'^index/', giversviews.index, name='index'),
+    url(r'^search/', giversviews.search, name='search'),
+    url(r'^profile/', giversviews.profile, name='profile'),
     url(r'^post_user/', giversviews.post_user, name='post_user'),
 
     url(r'^admin/', include(admin.site.urls)),

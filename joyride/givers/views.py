@@ -4,14 +4,11 @@ from math import sin, cos, radians, degrees, acos, sqrt
 import json
 import urllib2
 
-# Create your views here.
 def index(request):
     start_lat="43.722598"
     start_lng="-79.645825"
     data = { "start_lat" : start_lat,  "start_lng" : start_lng}
     return render(request, 'index.html', data)
-
-
 
 def search(request, lat_start="43.722598", lng_start="-79.645825", lat_end="43.851361", lng_end="-79.332975"):
     all_givers = Giver.objects.all()
@@ -86,7 +83,7 @@ def search(request, lat_start="43.722598", lng_start="-79.645825", lat_end="43.8
     for i in range(0, nearby_givers.__len__(), 1):
         dict = {
              "fb_id" : giver_fb_id[i].encode('utf8'),
-             "fb_picture" : getFacebookPictureUrl("https://graph.facebook.com/v2.0/" + giver_fb_id[i].encode('utf8') + "/picture"),
+             "fb_picture" : get_facebook_picture(giver_fb_id[i].encode('utf8')),
              "name" : giver_names[i].encode('utf8'),
              "rating" : round(giver_ratings[i], 1),
              "lat_start" : giver_lat_start[i].encode('utf8'),
@@ -108,9 +105,10 @@ def search(request, lat_start="43.722598", lng_start="-79.645825", lat_end="43.8
     data = { "start_lat" : start_lat,  "start_lng" : start_lng,  "end_lat" : end_lat, "end_lng" : end_lng, "dump" : dump}
     return render(request, 'index.html', data)
 
-def getFacebookPictureUrl(request_url):
-    response = urllib2.urlopen(request_url)
-    return response.url
+def get_facebook_picture(facebook_id):
+    return "https://graph.facebook.com/v2.0/" + facebook_id + "/picture?type=large"
+    # response = urllib2.urlopen(PICTURE_URL)
+    # return response.url
     # response_data = response.read()
     # data = json.loads(response_data)
     # pictureUrl = data['data']['url']
@@ -132,7 +130,7 @@ def post_user(request):
     data = json.loads(response_data)
     fbID = data['id'].encode('utf8')
 
-    obj = Giver.objects.filter(fb_id=userID)
+    obj = Giver.objects.filter(fb_id = userID)
     if not obj:
         obj = Giver(fb_id=fbID, lng_start="-79.645825", lat_start="43.722598", lng_end="-79.258499", lat_end="43.884701")
         obj.save()
@@ -150,11 +148,11 @@ def calc_dist(lat_a, long_a, lat_b, long_b):
                 cos(lat_a) * cos(lat_b) * cos(long_diff))
     return degrees(acos(distance)) * 69.09
 
-
-#def facebook_login(request):
-#    url = 'https://www.facebook.com/dialog/oauth?client_id=1486567314893292&redirect_uri=https://www.facebook.com/connect/login_success.html&response_type=token&scope=public_profile,email,user_friends'
-#    serialized_data = urllib2.urlopen(url).read()
-
-#    data = json.loads(serialized_data)
-#    r = request.GET("https://www.facebook.com/dialog/oauth?client_id=1486567314893292&redirect_uri=https://www.facebook.com/connect/login_success.html&response_type=token&scope=public_profile,email,user_friends")
-#    return render(request, 'search.html')
+def profile(request):
+    if request.GET.get('id', False):
+        giver = Giver.objects.get(fb_id = request.GET.get('id', False))
+        fb_img = get_facebook_picture(request.GET.get('id', False))
+        data = {
+            "fb_img" : fb_img
+        }
+        return render(request, 'profile.html', data)
