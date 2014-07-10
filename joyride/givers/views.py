@@ -23,6 +23,7 @@ def search(request, lat_start="43.722598", lng_start="-79.645825", lat_end="43.8
     giver_lat_end = []
     giver_lng_start = []
     giver_lng_end = []
+    giver_distance_start_positions = []
 
     MAX_RADIUS = 0.11
     GRAPH_API_BASE_URL = 'https://graph.facebook.com/'
@@ -74,6 +75,7 @@ def search(request, lat_start="43.722598", lng_start="-79.645825", lat_end="43.8
             giver_lat_end.append(giver.lat_end)
             giver_lng_start.append(giver.lng_start)
             giver_lng_end.append(giver.lng_end)
+            giver_distance_start_positions.append(get_duration(str(lat_start), str(lng_start), giver.lat_start, giver.lng_start))
 
 
     arrayOfDicts = []
@@ -86,11 +88,12 @@ def search(request, lat_start="43.722598", lng_start="-79.645825", lat_end="43.8
              "fb_id" : giver_fb_id[i].encode('utf8'),
              "fb_picture" : getFacebookPictureUrl("https://graph.facebook.com/v2.0/" + giver_fb_id[i].encode('utf8') + "/picture"),
              "name" : giver_names[i].encode('utf8'),
-             "rating" : giver_ratings[i],
+             "rating" : round(giver_ratings[i], 1),
              "lat_start" : giver_lat_start[i].encode('utf8'),
              "lat_end" : giver_lat_end[i].encode('utf8'),
              "lng_start" : giver_lng_start[i].encode('utf8'),
-             "lng_end" : giver_lng_end[i].encode('utf8')
+             "lng_end" : giver_lng_end[i].encode('utf8'),
+             "duration_from_start" : giver_distance_start_positions[i].encode('utf8')
          }
         arrayOfDicts.append(dict)
         count += 1
@@ -100,8 +103,8 @@ def search(request, lat_start="43.722598", lng_start="-79.645825", lat_end="43.8
 
     start_lat = start_location["lat"]
     start_lng = start_location["lng"]
-    end_lat = start_location["lat"]
-    end_lng = start_location["lng"]
+    end_lat = end_location["lat"]
+    end_lng = end_location["lng"]
     data = { "start_lat" : start_lat,  "start_lng" : start_lng,  "end_lat" : end_lat, "end_lng" : end_lng, "dump" : dump}
     return render(request, 'index.html', data)
 
@@ -112,6 +115,13 @@ def getFacebookPictureUrl(request_url):
     # data = json.loads(response_data)
     # pictureUrl = data['data']['url']
     # return pictureUrl
+
+def get_duration(lat_1, lng_1, lat_2, lng_2):
+    GOOGLE_API_KEY = "AIzaSyDiqODRLvfieiM6iGbUR4Rk62YkKT7dqPw"
+    response_data = urllib2.urlopen("https://maps.googleapis.com/maps/api/directions/json?origin="+lat_1+","+lng_1+"&destination="+lat_2+","+lng_2+"&key="+GOOGLE_API_KEY).read()
+    data = json.loads(response_data)
+    duration = data["routes"][0]["legs"][0]["duration"]["text"]
+    return duration
 
 
 def post_user(request):

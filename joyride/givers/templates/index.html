@@ -73,7 +73,10 @@
                 img.appendTo(firstCol);
 
                 var secondCol = $('<td />', {valign: 'top'}).appendTo(bigRow);
-                secondCol.append('<div>'+objJson[i].name+'</div>');
+                secondCol.append("<div id='content_"+i+"'><h4>"+objJson[i].name+"</h4></div>");
+{#                secondCol.append('<div><h4>'+objJson[i].name+'</h4></div>');#}
+                $('#content_'+i).append("<h5>Rating: "+objJson[i].rating+"</h5>");
+                $('#content_'+i).append("<h5>Distance: "+objJson[i].duration_from_start+" drive from you</h5>");
                 secondCol.css('padding-left', '10px');
 
                 var contentString = "<div>This is " + objJson[i].name + "</div><br/>" +
