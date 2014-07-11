@@ -24,6 +24,7 @@ def search(request, lat_start="43.722598", lng_start="-79.645825", lat_end="43.8
     giver_lng_start = []
     giver_lng_end = []
     giver_distance_start_positions = []
+    giver_distance_end_positions = []
 
     # Get starting latitude and longitude location
     if request.POST.get('StartingLocation'):
@@ -73,6 +74,7 @@ def search(request, lat_start="43.722598", lng_start="-79.645825", lat_end="43.8
             giver_lng_start.append(giver.lng_start)
             giver_lng_end.append(giver.lng_end)
             giver_distance_start_positions.append(get_duration(str(lat_start), str(lng_start), giver.lat_start, giver.lng_start))
+            giver_distance_end_positions.append(get_duration(str(lat_end), str(lng_end), giver.lat_end, giver.lng_end))
 
 
     arrayOfDicts = []
@@ -90,7 +92,8 @@ def search(request, lat_start="43.722598", lng_start="-79.645825", lat_end="43.8
              "lat_end" : giver_lat_end[i].encode('utf8'),
              "lng_start" : giver_lng_start[i].encode('utf8'),
              "lng_end" : giver_lng_end[i].encode('utf8'),
-             "duration_from_start" : giver_distance_start_positions[i].encode('utf8')
+             "distance_start" : giver_distance_start_positions[i].encode('utf8'),
+             "distance_dest" : giver_distance_end_positions[i].encode('utf8')
          }
         arrayOfDicts.append(dict)
         count += 1
@@ -166,7 +169,8 @@ def profile(request):
             "name" : response_data["first_name"] + " " + response_data["last_name"],
             "fb_img" : get_facebook_picture(request.GET.get('id', False)),
             "rating" : round(calc_rating(hyp_from_start, hyp_from_dest), 1),
-            "distance" : get_duration(str(request.GET.get('start_lat')), str(request.GET.get('start_lng')), giver.lat_start, giver.lng_start),
+            "distance_start" : get_duration(str(request.GET.get('start_lat')), str(request.GET.get('start_lng')), giver.lat_start, giver.lng_start),
+            "distance_dest" : get_duration(str(request.GET.get('end_lat')), str(request.GET.get('end_lng')), giver.lat_end, giver.lng_end),
             "start_lat" : request.GET.get('start_lat'),
             "start_lng" : request.GET.get('start_lng'),
             "giver_start_lat" : giver.lat_start,

@@ -160,21 +160,35 @@
                 mapTypeId: google.maps.MapTypeId.ROADMAP
               });
 
-              google.maps.event.addListenerOnce(map, 'tilesloaded', addMarkers);
-              google.maps.event.addListenerOnce(map2, 'tilesloaded', addMarkers);
+              google.maps.event.addListenerOnce(map, 'tilesloaded', addMarkersStart);
+              google.maps.event.addListenerOnce(map2, 'tilesloaded', addMarkersDest);
 
             }
 
-            function addMarkers() {
+            function addMarkersStart() {
+                var content1 = 'This is your Starting Point';
+                var infowindow1 = new google.maps.InfoWindow({
+                  content: content1
+                });
+
                 var marker_start = new google.maps.Marker({
                     position: new google.maps.LatLng('{{ start_lat }}', '{{ start_lng }}'),
                     icon: "http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=%E2%80%A2|FE7569",
                     map: map
                 });
+                infowindow1.open(map, marker_start);
+
                 var giver_marker_start = new google.maps.Marker({
                     position: new google.maps.LatLng('{{ giver_start_lat }}', '{{ giver_start_lng }}'),
                     icon: "http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=%E2%80%A2|7FB5EB",
                     map: map
+                });
+            }
+
+            function addMarkersDest() {
+                var content2 = 'This is your Destination';
+                var infowindow2 = new google.maps.InfoWindow({
+                  content: content2
                 });
 
                 var marker_dest = new google.maps.Marker({
@@ -182,6 +196,8 @@
                     icon: "http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=%E2%80%A2|FE7569",
                     map: map2
                 });
+                infowindow2.open(map2, marker_dest);
+
                 var giver_marker_dest = new google.maps.Marker({
                     position: new google.maps.LatLng('{{ giver_end_lat }}', '{{ giver_end_lng }}'),
                     icon: "http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=%E2%80%A2|7FB5EB",
@@ -331,45 +347,30 @@
                         </td>
                         <td valign='top' style="padding-left: 10px;">
                             <h2>{{ name }}</h2>
-                            <h5>Rating: {{ rating }}</h5>
-                            <h5>Distance: {{ distance }} drive from you</h5>
+                            <h5><b>Rating:</b> {{ rating }}</h5>
+                            <h5><b>Distance from Start:</b> {{ distance_start }} drive from you</h5>
+                            <h5><b>Distance from Destination:</b> {{ distance_dest }} drive from your destination</h5>
                         </td>
                     </tr>
                 </table>
             </div>
         </div>
         <div class="maps-table-holder" style="width:82%; margin:0 auto; height: 500px; margin-bottom: 1em;">
-{#            <table>#}
-{#                <tr>#}
-{#                    <td>#}
-                        <div id="map-container" class="map-container" style="float:left; width:50%; padding-left:10px; padding-right:5px;">
-                            <div class="container" style="width: 100%;">
-                                <div id="map">
-                                    <div id="map-canvas"></div>
-                                </div>
-                            </div>
-                        </div>
+            <div id="map-container" class="map-container" style="float:left; width:50%; padding-left:10px; padding-right:5px;">
+                <div class="container" style="width: 100%;">
+                    <div id="map">
+                        <div id="map-canvas"></div>
+                    </div>
+                </div>
+            </div>
 
-                        <div id="map-container" class="map-container" style="float:right; width:50%; padding-right:10px; padding-left:5px;">
-                            <div class="container" style="width: 100%;">
-                                <div id="map">
-                                    <div id="map-canvas2"></div>
-                                </div>
-                            </div>
-                        </div>
-{#                    </td>#}
-{#                    <td>#}
-{#                        <div id="map-container" class="map-container">#}
-{#                            <div class="container">#}
-{#                                <div id="map">#}
-{#                                    <div id="map-canvas"></div>#}
-{#                                </div>#}
-{#                            </div>#}
-{#                        </div>#}
-{#                    </td>#}
-{#                </tr>#}
-
-{#            </table>#}
+            <div id="map-container" class="map-container" style="float:right; width:50%; padding-right:10px; padding-left:5px;">
+                <div class="container" style="width: 100%;">
+                    <div id="map">
+                        <div id="map-canvas2"></div>
+                    </div>
+                </div>
+            </div>
         </div>
     </body>
 </html>
