@@ -26,6 +26,15 @@ def search(request, lat_start="43.722598", lng_start="-79.645825", lat_end="43.8
     giver_distance_start_positions = []
     giver_distance_end_positions = []
 
+    if request.POST.get('lat_start'):
+        lat_start = request.POST.get('lat_start', False).encode('utf8')
+    if request.POST.get('lng_start'):
+        lng_start = request.POST.get('lng_start', False).encode('utf8')
+    if request.POST.get('lat_end'):
+        lat_end = request.POST.get('lat_end', False).encode('utf8')
+    if request.POST.get('lng_end'):
+        lng_end = request.POST.get('lng_end', False).encode('utf8')
+
     # Get starting latitude and longitude location
     if request.POST.get('StartingLocation'):
         GEOCODE_START_REQUEST_URL = 'http://maps.google.com/maps/api/geocode/json?address='+request.POST.get('StartingLocation', False).encode('utf8')+'&sensor=false'

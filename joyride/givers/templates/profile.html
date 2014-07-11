@@ -120,6 +120,7 @@
               console.log('Successful login for: ' + response.name);
               document.getElementById('status').innerHTML = '';
               document.getElementById('search_form_fb_id').value = FB.getAuthResponse().userID;
+              document.getElementById('back_form_fb_id').value = FB.getAuthResponse().userID;
 {#              document.getElementById('fb_access_token').value = FB.getAuthResponse().accessToken;#}
 
               $.ajax({
@@ -372,7 +373,18 @@
             </div>
             <div id="back-button-container">
                 <div id="back-button">
-                    <a href="#">< Back to Search Results</a>
+                    <form id="destinationForm" action="/search/" role="form" class="form-inline" method="post" >
+                        {% csrf_token %}
+                        {{ form.non_field_errors }}
+                        {{ form.as_p }}
+                        <input type="hidden" class="form-control"  id="start_lat" name="start_lat" value="{{ start_lat }}">
+                        <input type="hidden" class="form-control"  id="start_lng" name="start_lng" value="{{ start_lng }}">
+                        <input type="hidden" class="form-control"  id="end_lat" name="end_lat" value="{{ end_lat }}">
+                        <input type="hidden" class="form-control"  id="end_lng" name="end_lng" value="{{ end_lng }}">
+                        <input id="back_form_fb_id" type="hidden" name="back_form_fb_id" value="">
+                        <a href="javascript:{}" onclick="document.getElementById('destinationForm').submit();">< Back to Search Results</a>
+                    </form>
+{#                    <a href="#">< Back to Search Results</a>#}
                 </div>
             </div>
         </div>
