@@ -228,6 +228,18 @@
           }
         </script>
 
+        <script>
+            function onLogoHover()
+            {
+                $("#iconImg").attr('src', '{% static "img/ridepool_teal.png" %}');
+            }
+
+            function offLogoHover()
+            {
+                $("#iconImg").attr('src', '{% static "img/ridepool_white.png" %}');
+            }
+        </script>
+
         <style>
             body {
 {#                background-color: gray;#}
@@ -326,7 +338,7 @@
                         <tr>
                             <td>
                                <div style="float:left;">
-                                   <img src={% static 'img/ridepool_white.png' %} height="55" />
+                                   <a href="#"><img id="iconImg" src={% static 'img/ridepool_white.png' %} height="55" onmouseover="onLogoHover();" onmouseout="offLogoHover();" /></a>
                                </div>
                             </td>
                             <td>
