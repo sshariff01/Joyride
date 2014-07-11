@@ -9,7 +9,7 @@
     <file path="/search.html" changelist="19fd5be2-2288-4a5a-9e1e-288a301330ce" time="1403368613923" ignored="false" />
     <file path="/urls.py" changelist="19fd5be2-2288-4a5a-9e1e-288a301330ce" time="1404978572156" ignored="false" />
     <file path="$PROJECT_DIR$/.idea/workspace.xml" changelist="19fd5be2-2288-4a5a-9e1e-288a301330ce" time="1403585798930" ignored="false" />
-    <file path="/profile.html" changelist="19fd5be2-2288-4a5a-9e1e-288a301330ce" time="1405061414356" ignored="false" />
+    <file path="/profile.html" changelist="19fd5be2-2288-4a5a-9e1e-288a301330ce" time="1405062865320" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,10 +43,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="profile.html" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="profile.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/givers/templates/profile.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="351" column="113" selection-start="14265" selection-end="14265" vertical-scroll-proportion="-8.916667">
+            <state line="374" column="34" selection-start="15112" selection-end="15112" vertical-scroll-proportion="0.31239387">
               <folding>
                 <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -64,10 +64,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/givers/templates/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="80" column="98" selection-start="3682" selection-end="3682" vertical-scroll-proportion="0.18505943">
+            <state line="80" column="98" selection-start="3682" selection-end="3682" vertical-scroll-proportion="-4.5416665">
               <folding />
             </state>
           </provider>
@@ -88,9 +88,9 @@
         <option value="$PROJECT_DIR$/givers/models.py" />
         <option value="$PROJECT_DIR$/givers/templates/css/main.css" />
         <option value="$PROJECT_DIR$/joyride/urls.py" />
-        <option value="$PROJECT_DIR$/givers/templates/profile.html" />
         <option value="$PROJECT_DIR$/givers/views.py" />
         <option value="$PROJECT_DIR$/givers/templates/index.html" />
+        <option value="$PROJECT_DIR$/givers/templates/profile.html" />
       </list>
     </option>
   </component>
@@ -504,9 +504,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/givers/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="94" column="81" selection-start="4404" selection-end="4404" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/givers/templates/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="80" column="98" selection-start="3682" selection-end="3682" vertical-scroll-proportion="-4.5416665">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/givers/templates/profile.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="351" column="113" selection-start="14265" selection-end="14265" vertical-scroll-proportion="-8.916667">
+        <state line="374" column="34" selection-start="15112" selection-end="15112" vertical-scroll-proportion="0.31239387">
           <folding>
             <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -520,20 +534,6 @@
             <element signature="n#style#0;n#div#1;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#1;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/givers/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="94" column="81" selection-start="4404" selection-end="4404" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/givers/templates/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="80" column="98" selection-start="3682" selection-end="3682" vertical-scroll-proportion="0.18505943">
-          <folding />
         </state>
       </provider>
     </entry>

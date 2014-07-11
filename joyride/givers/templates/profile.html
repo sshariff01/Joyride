@@ -166,7 +166,7 @@
             }
 
             function addMarkersStart() {
-                var content1 = 'This is your Starting Point';
+                var content1 = 'This is your <strong>Starting Point</strong>';
                 var infowindow1 = new google.maps.InfoWindow({
                   content: content1
                 });
@@ -186,7 +186,7 @@
             }
 
             function addMarkersDest() {
-                var content2 = 'This is your Destination';
+                var content2 = 'This is your <strong>Destination</strong>';
                 var infowindow2 = new google.maps.InfoWindow({
                   content: content2
                 });
@@ -294,6 +294,21 @@
                 border-radius: 5px;
                 padding: 10px;
             }
+
+            #back-button-container {
+                position: absolute;
+                top:80px; left: 0; bottom: 0; right: 0;
+                width:82%;
+                margin: 0 auto;
+            }
+
+            #back-button {
+                text-align: right;
+                margin: 10px;
+                border-radius: 5px;
+                padding: 10px;
+                z-index: 100;
+            }
         </style>
     </head>
     <body>
@@ -311,7 +326,7 @@
                         <tr>
                             <td>
                                <div style="float:left;">
-                                   <img src={% static 'img/ridepool_white.png' %} height="55" />
+                                   <a href="/index"><img src={% static 'img/ridepool_white.png' %} height="55" /></a>
                                </div>
                             </td>
                             <td>
@@ -334,8 +349,6 @@
                         </tr>
                     </table>
                 </div>
-
-
             </div>
         </div>
         <div class="profiles-container">
@@ -351,8 +364,16 @@
                             <h5><b>Distance from Start:</b> {{ distance_start }} drive from you</h5>
                             <h5><b>Distance from Destination:</b> {{ distance_dest }} drive from your destination</h5>
                         </td>
+{#                        <td valign='top' style="text-align: right;">#}
+{#                            <a href='#'>Go Back</a>#}
+{#                        </td>#}
                     </tr>
                 </table>
+            </div>
+            <div id="back-button-container">
+                <div id="back-button">
+                    <a href="#">< Back to Search Results</a>
+                </div>
             </div>
         </div>
         <div class="maps-table-holder" style="width:82%; margin:0 auto; height: 500px; margin-bottom: 1em;">
