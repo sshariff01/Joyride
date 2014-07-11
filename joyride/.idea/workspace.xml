@@ -5,11 +5,11 @@
     <ignored path="joyride.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/index.html" changelist="19fd5be2-2288-4a5a-9e1e-288a301330ce" time="1405058144092" ignored="false" />
-    <file path="/views.py" changelist="19fd5be2-2288-4a5a-9e1e-288a301330ce" time="1405058375333" ignored="false" />
+    <file path="/views.py" changelist="19fd5be2-2288-4a5a-9e1e-288a301330ce" time="1405060613944" ignored="false" />
     <file path="/search.html" changelist="19fd5be2-2288-4a5a-9e1e-288a301330ce" time="1403368613923" ignored="false" />
     <file path="/urls.py" changelist="19fd5be2-2288-4a5a-9e1e-288a301330ce" time="1404978572156" ignored="false" />
     <file path="$PROJECT_DIR$/.idea/workspace.xml" changelist="19fd5be2-2288-4a5a-9e1e-288a301330ce" time="1403585798930" ignored="false" />
-    <file path="/profile.html" changelist="19fd5be2-2288-4a5a-9e1e-288a301330ce" time="1405058414877" ignored="false" />
+    <file path="/profile.html" changelist="19fd5be2-2288-4a5a-9e1e-288a301330ce" time="1405060665556" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,7 +37,7 @@
       <file leaf-file-name="views.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/givers/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="167" column="75" selection-start="7525" selection-end="7525" vertical-scroll-proportion="0.0">
+            <state line="176" column="43" selection-start="8072" selection-end="8072" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -46,7 +46,7 @@
       <file leaf-file-name="profile.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/givers/templates/profile.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="279" column="53" selection-start="11181" selection-end="11181" vertical-scroll-proportion="0.6434635">
+            <state line="340" column="93" selection-start="13792" selection-end="13792" vertical-scroll-proportion="0.2614601">
               <folding>
                 <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -54,6 +54,10 @@
                 <element signature="n#style#0;n#div#0;n#td#0;n#tr#0;n#table#0;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#td#1;n#tr#0;n#table#0;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#td#1;n#tr#0;n#table#0;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#1;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -62,7 +66,7 @@
       <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/givers/templates/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="79" column="109" selection-start="3490" selection-end="3558" vertical-scroll-proportion="-8.75">
+            <state line="90" column="23" selection-start="4312" selection-end="4312" vertical-scroll-proportion="154.20833">
               <folding />
             </state>
           </provider>
@@ -499,23 +503,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/givers/templates/index.html">
+    <entry file="file://$PROJECT_DIR$/givers/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="79" column="109" selection-start="3490" selection-end="3558" vertical-scroll-proportion="-8.75">
+        <state line="176" column="43" selection-start="8072" selection-end="8072" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/givers/views.py">
+    <entry file="file://$PROJECT_DIR$/givers/templates/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="167" column="75" selection-start="7525" selection-end="7525" vertical-scroll-proportion="0.0">
+        <state line="90" column="23" selection-start="4312" selection-end="4312" vertical-scroll-proportion="154.20833">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/givers/templates/profile.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="279" column="53" selection-start="11181" selection-end="11181" vertical-scroll-proportion="0.6434635">
+        <state line="340" column="93" selection-start="13792" selection-end="13792" vertical-scroll-proportion="0.2614601">
           <folding>
             <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -523,6 +527,10 @@
             <element signature="n#style#0;n#div#0;n#td#0;n#tr#0;n#table#0;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#td#1;n#tr#0;n#table#0;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#td#1;n#tr#0;n#table#0;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -166,6 +166,14 @@ def profile(request):
             "name" : response_data["first_name"] + " " + response_data["last_name"],
             "fb_img" : get_facebook_picture(request.GET.get('id', False)),
             "rating" : round(calc_rating(hyp_from_start, hyp_from_dest), 1),
-            "distance" : get_duration(str(request.GET.get('start_lat')), str(request.GET.get('start_lng')), giver.lat_start, giver.lng_start)
+            "distance" : get_duration(str(request.GET.get('start_lat')), str(request.GET.get('start_lng')), giver.lat_start, giver.lng_start),
+            "start_lat" : request.GET.get('start_lat'),
+            "start_lng" : request.GET.get('start_lng'),
+            "giver_start_lat" : giver.lat_start,
+            "giver_start_lng" : giver.lng_start,
+            "end_lat" : request.GET.get('end_lat'),
+            "end_lng" : request.GET.get('end_lng'),
+            "giver_end_lat" : giver.lat_end,
+            "giver_end_lng" : giver.lng_end
         }
         return render(request, 'profile.html', data)
