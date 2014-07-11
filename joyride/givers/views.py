@@ -4,6 +4,9 @@ from math import sin, cos, radians, degrees, acos, sqrt
 import json
 import urllib2
 
+GRAPH_API_BASE_URL = 'https://graph.facebook.com/'
+MAX_RADIUS = 0.11
+
 def index(request):
     start_lat="43.722598"
     start_lng="-79.645825"
@@ -21,9 +24,6 @@ def search(request, lat_start="43.722598", lng_start="-79.645825", lat_end="43.8
     giver_lng_start = []
     giver_lng_end = []
     giver_distance_start_positions = []
-
-    MAX_RADIUS = 0.11
-    GRAPH_API_BASE_URL = 'https://graph.facebook.com/'
 
     # Get starting latitude and longitude location
     if request.POST.get('StartingLocation'):
@@ -62,7 +62,7 @@ def search(request, lat_start="43.722598", lng_start="-79.645825", lat_end="43.8
             response_data = response.read()
             data = json.loads(response_data)
 
-            rating = 50*(hyp_from_start/MAX_RADIUS) + 50*(hyp_from_dest/MAX_RADIUS)
+            rating = calc_rating(hyp_from_start, hyp_from_dest)
 
             nearby_givers.append(giver)
             giver_fb_id.append(giver.fb_id)
@@ -148,11 +148,24 @@ def calc_dist(lat_a, long_a, lat_b, long_b):
                 cos(lat_a) * cos(lat_b) * cos(long_diff))
     return degrees(acos(distance)) * 69.09
 
+def calc_rating(hyp_from_start, hyp_from_dest):
+    return 50*(hyp_from_start/MAX_RADIUS) + 50*(hyp_from_dest/MAX_RADIUS)
+
 def profile(request):
     if request.GET.get('id', False):
         giver = Giver.objects.get(fb_id = request.GET.get('id', False))
-        fb_img = get_facebook_picture(request.GET.get('id', False))
+
+        hyp_from_start = calc_hypotenuse(float(request.GET.get('start_lat')), float(request.GET.get('start_lng')), float(giver.lat_start), float(giver.lng_start))
+        hyp_from_dest = calc_hypotenuse(float(request.GET.get('end_lat')), float(request.GET.get('end_lng')), float(giver.lat_end), float(giver.lng_end))
+
+        fb_graph_url = GRAPH_API_BASE_URL+request.GET.get('id', False)
+        response = urllib2.urlopen(fb_graph_url).read()
+        response_data = json.loads(response)
+
         data = {
-            "fb_img" : fb_img
+            "name" : response_data["first_name"] + " " + response_data["last_name"],
+            "fb_img" : get_facebook_picture(request.GET.get('id', False)),
+            "rating" : round(calc_rating(hyp_from_start, hyp_from_dest), 1),
+            "distance" : get_duration(str(request.GET.get('start_lat')), str(request.GET.get('start_lng')), giver.lat_start, giver.lng_start)
         }
         return render(request, 'profile.html', data)

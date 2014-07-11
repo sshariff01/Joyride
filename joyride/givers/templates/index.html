@@ -78,7 +78,7 @@
 {#                secondCol.append('<div><h4>'+objJson[i].name+'</h4></div>');#}
                 $('#content_'+i).append("<h5>Rating: "+objJson[i].rating+"</h5>");
                 $('#content_'+i).append("<h5>Distance: "+objJson[i].duration_from_start+" drive from you</h5>");
-                $('#content_'+i).append("<h5><a href='/profile?id="+objJson[i].fb_id+"'>More ></a></h5>");
+                $('#content_'+i).append("<h5><a href='/profile?id="+objJson[i].fb_id+"&start_lat={{ start_lat }}&start_lng={{ start_lng }}&end_lat={{ end_lat }}&end_lng={{ end_lng }}'>More ></a></h5>");
                 secondCol.css('padding-left', '10px');
 
                 var contentString = "<div>This is " + objJson[i].name + "</div><br/>" +

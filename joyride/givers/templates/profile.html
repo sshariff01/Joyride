@@ -269,7 +269,18 @@
         </div>
         <div class="profiles-container">
             <div class="profiles">
-                <img src={{ fb_img }} >
+                <table>
+                    <tr>
+                        <td>
+                            <img src={{ fb_img }} >
+                        </td>
+                        <td valign='top' style="padding-left: 10px;">
+                            <h2>{{ name }}</h2>
+                            <h5>Rating: {{ rating }}</h5>
+                            <h5>Distance: {{ distance }} drive from you</h5>
+                        </td>
+                    </tr>
+                </table>
             </div>
         </div>
     </body>
