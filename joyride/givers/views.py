@@ -8,10 +8,10 @@ GRAPH_API_BASE_URL = 'https://graph.facebook.com/'
 MAX_RADIUS = 0.11
 
 def index(request):
-    start_lat="43.722598"
-    start_lng="-79.645825"
-    data = { "start_lat" : start_lat,  "start_lng" : start_lng}
-    return render(request, 'index.html', data)
+    # start_lat="43.722598"
+    # start_lng="-79.645825"
+    # data = { "start_lat" : start_lat,  "start_lng" : start_lng}
+    return render(request, 'index.html')
 
 def search(request, lat_start="43.722598", lng_start="-79.645825", lat_end="43.851361", lng_end="-79.332975"):
     all_givers = Giver.objects.all()

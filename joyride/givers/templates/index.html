@@ -39,13 +39,77 @@
 
         <script>
             var map;
+            var initialLocation;
+            var siberia = new google.maps.LatLng(60, 105);
+            var newyork = new google.maps.LatLng(40.69847032728747, -73.9514422416687);
+            var browserSupportFlag =  new Boolean();
+
             function initialize() {
               var mapDiv = document.getElementById('map-canvas');
+              var content1 = 'This is <strong>you</strong>!';
+              var infowindow1 = new google.maps.InfoWindow({
+                content: content1
+              });
+
+
+
+
               map = new google.maps.Map(mapDiv, {
-                center: new google.maps.LatLng('{{ start_lat }}', '{{ start_lng }}'),
+{#                center: new google.maps.LatLng('{{ start_lat }}', '{{ start_lng }}'),#}
                 zoom: 11,
                 mapTypeId: google.maps.MapTypeId.ROADMAP
               });
+
+              {% if start_lat and start_lng %}
+
+                  initialLocation = new google.maps.LatLng('{{ start_lat }}', '{{ start_lng }}');
+                  map.setCenter(initialLocation);
+                  var marker = new google.maps.Marker({
+                        position: initialLocation,
+                        icon: "http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=%E2%80%A2|FE7569",
+                        map: map
+                  });
+                  infowindow1.open(map, marker);
+
+              {% else %}
+
+                  // Try W3C Geolocation (Preferred)
+                  if(navigator.geolocation) {
+                    browserSupportFlag = true;
+                    navigator.geolocation.getCurrentPosition(function(position) {
+                      initialLocation = new google.maps.LatLng(position.coords.latitude,position.coords.longitude);
+                      map.setCenter(initialLocation);
+                      var marker = new google.maps.Marker({
+                            position: initialLocation,
+                            icon: "http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=%E2%80%A2|FE7569",
+                            map: map
+                      });
+                      infowindow1.open(map, marker);
+                    }, function() {
+                      handleNoGeolocation(browserSupportFlag);
+                    });
+                  }
+                  // Browser doesn't support Geolocation
+                  else {
+                    browserSupportFlag = false;
+                    handleNoGeolocation(browserSupportFlag);
+                  }
+
+                  function handleNoGeolocation(errorFlag) {
+                    if (errorFlag == true) {
+                      alert("Geolocation service failed.");
+                      initialLocation = newyork;
+                    } else {
+                      alert("Your browser doesn't support geolocation. We've placed you in Siberia.");
+                      initialLocation = siberia;
+                    }
+                    map.setCenter(initialLocation);
+                  }
+
+              {% endif %}
+
+
+
 
               google.maps.event.addListenerOnce(map, 'tilesloaded', addMarkers);
 
@@ -141,12 +205,8 @@
               }
 
               {% endif %}
-              var latLng = new google.maps.LatLng('{{ start_lat }}', '{{ start_lng }}');
-              var marker = new google.maps.Marker({
-                    position: latLng,
-                    icon: "http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=%E2%80%A2|FE7569",
-                    map: map
-                });
+
+
             }
             google.maps.event.addDomListener(window, 'load', initialize);
         </script>
