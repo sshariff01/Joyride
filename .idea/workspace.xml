@@ -2,63 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="deb5cedf-bce2-44fa-be5f-40e0e1cd6790" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/FindARide.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/findaride/static/img/Times_Square.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/findaride/static/img/fb-btn.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/findaride/static/img/loginBG.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/givers/templates/img/loginBG.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/findaride/static/img/logo.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/givers/templates/img/logo.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/findaride/static/img/mainBG.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/givers/templates/img/mainBG.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/findaride/static/img/moreinfo.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/findaride/static/img/nyc_taxi.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/givers/templates/img/nyc_taxi.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/findaride/static/img/ridepool_teal.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/findaride/static/img/ridepool_white.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/givers/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/givers/admin.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/findaride/static/js/bootstrap.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/givers/templates/js/bootstrap.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/findaride/static/js/bootstrap.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/givers/templates/js/bootstrap.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/findaride/static/css/custom.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/givers/templates/css/custom.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/findaride/static/js/google-maps.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/givers/templates/js/google-maps.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/findaride/static/css/index.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/givers/templates/css/index.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/givers/templates/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/givers/templates/test/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/findaride/static/js/vendor/jquery-2.1.1.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/givers/templates/js/vendor/jquery-2.1.1.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/givers/templates/js/jquery.collapse.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/findaride/static/css/main.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/givers/templates/css/main.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/findaride/static/js/main.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/givers/templates/js/main.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/givers/models.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/findaride/static/js/vendor/modernizr-2.8.0.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/givers/templates/js/vendor/modernizr-2.8.0.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/findaride/static/css/normalize.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/givers/templates/css/normalize.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/other.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/findaride/static/js/plugins.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/givers/templates/js/plugins.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/findaride/static/css/profile.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/givers/templates/css/profile.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/givers/templates/profile.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/scopes/scope_settings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/testrunner.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/givers/tests.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/givers/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/findaride/settings.py" afterPath="$PROJECT_DIR$/findaride/settings.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/findaride/urls.py" afterPath="$PROJECT_DIR$/findaride/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/findaride/.idea/workspace.xml" afterPath="$PROJECT_DIR$/findaride/.idea/workspace.xml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/givers/templates/css/custom.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/givers/templates/css/index.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/givers/templates/css/main.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/givers/templates/css/normalize.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/givers/templates/css/profile.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/givers/templates/img/loginBG.jpg" afterPath="" />
     </list>
     <ignored path="FindARide.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -104,19 +53,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="settings.py" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="settings.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/findaride/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="45" column="26" selection-start="1198" selection-end="1198" vertical-scroll-proportion="0.0">
+            <state line="65" column="5" selection-start="1768" selection-end="1768" vertical-scroll-proportion="0.4114713">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="profile.html" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="profile.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/givers/templates/profile.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="354" column="89" selection-start="13984" selection-end="13984" vertical-scroll-proportion="9.234782">
+            <state line="354" column="89" selection-start="13984" selection-end="13984" vertical-scroll-proportion="-221.25">
               <folding />
             </state>
           </provider>
@@ -240,6 +189,28 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="givers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="img" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FindARide" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FindARide" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="findaride" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -340,6 +311,26 @@
       <option name="customRunCommand" value="" />
       <method />
     </configuration>
+    <configuration default="true" type="tests" factoryName="Doctests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="FindARide" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <method />
+    </configuration>
     <configuration default="true" type="JavascriptDebugSession" factoryName="Local" singleton="true">
       <JSDebuggerConfigurationSettings>
         <option name="engineId" />
@@ -389,7 +380,7 @@
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3296875" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3296875" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24958813" sideWeight="0.6703125" order="0" side_tool="false" content_ui="combo" />
@@ -506,16 +497,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/findaride/settings.py">
+    <entry file="file://$PROJECT_DIR$/givers/templates/profile.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="45" column="26" selection-start="1198" selection-end="1198" vertical-scroll-proportion="0.0">
+        <state line="354" column="89" selection-start="13984" selection-end="13984" vertical-scroll-proportion="-221.25">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/givers/templates/profile.html">
+    <entry file="file://$PROJECT_DIR$/findaride/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="354" column="89" selection-start="13984" selection-end="13984" vertical-scroll-proportion="9.234782">
+        <state line="65" column="5" selection-start="1768" selection-end="1768" vertical-scroll-proportion="0.4114713">
           <folding />
         </state>
       </provider>
