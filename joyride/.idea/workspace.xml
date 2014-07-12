@@ -4,12 +4,12 @@
     <list default="true" id="19fd5be2-2288-4a5a-9e1e-288a301330ce" name="Default" comment="" />
     <ignored path="joyride.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/index.html" changelist="19fd5be2-2288-4a5a-9e1e-288a301330ce" time="1405126595747" ignored="false" />
-    <file path="/views.py" changelist="19fd5be2-2288-4a5a-9e1e-288a301330ce" time="1405064168143" ignored="false" />
+    <file path="/index.html" changelist="19fd5be2-2288-4a5a-9e1e-288a301330ce" time="1405144889989" ignored="false" />
+    <file path="/views.py" changelist="19fd5be2-2288-4a5a-9e1e-288a301330ce" time="1405145956048" ignored="false" />
     <file path="/search.html" changelist="19fd5be2-2288-4a5a-9e1e-288a301330ce" time="1403368613923" ignored="false" />
     <file path="/urls.py" changelist="19fd5be2-2288-4a5a-9e1e-288a301330ce" time="1404978572156" ignored="false" />
     <file path="$PROJECT_DIR$/.idea/workspace.xml" changelist="19fd5be2-2288-4a5a-9e1e-288a301330ce" time="1403585798930" ignored="false" />
-    <file path="/profile.html" changelist="19fd5be2-2288-4a5a-9e1e-288a301330ce" time="1405065305085" ignored="false" />
+    <file path="/profile.html" changelist="19fd5be2-2288-4a5a-9e1e-288a301330ce" time="1405145809535" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,10 +34,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="views.py" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="views.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/givers/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="35" column="67" selection-start="1265" selection-end="1265" vertical-scroll-proportion="0.0">
+            <state line="36" column="0" selection-start="1266" selection-end="1266" vertical-scroll-proportion="-3.6327684">
               <folding />
             </state>
           </provider>
@@ -46,7 +46,7 @@
       <file leaf-file-name="profile.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/givers/templates/profile.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="396" column="55" selection-start="16450" selection-end="16457" vertical-scroll-proportion="-3.74">
+            <state line="395" column="39" selection-start="16335" selection-end="16335" vertical-scroll-proportion="-8.08">
               <folding>
                 <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -64,10 +64,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/givers/templates/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="113" column="127" selection-start="5294" selection-end="5294" vertical-scroll-proportion="0.5719361">
+            <state line="409" column="131" selection-start="17706" selection-end="17712" vertical-scroll-proportion="-13.58">
               <folding>
                 <element signature="n#style#0;n#table#0;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
@@ -90,16 +90,17 @@
         <option value="$PROJECT_DIR$/givers/models.py" />
         <option value="$PROJECT_DIR$/givers/templates/css/main.css" />
         <option value="$PROJECT_DIR$/joyride/urls.py" />
-        <option value="$PROJECT_DIR$/givers/views.py" />
-        <option value="$PROJECT_DIR$/givers/templates/profile.html" />
         <option value="$PROJECT_DIR$/givers/templates/index.html" />
+        <option value="$PROJECT_DIR$/givers/templates/profile.html" />
+        <option value="$PROJECT_DIR$/givers/views.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="y" value="22" />
-    <option name="width" value="1280" />
-    <option name="height" value="774" />
+    <option name="x" value="1280" />
+    <option name="y" value="-449" />
+    <option name="width" value="1226" />
+    <option name="height" value="1080" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -369,15 +370,15 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="22" width="1280" height="774" extended-state="0" />
+    <frame x="1280" y="-449" width="1226" height="1080" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298217" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18233387" sideWeight="0.59480125" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.40519878" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19067797" sideWeight="0.59583336" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.40416667" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32568806" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32874617" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -453,7 +454,7 @@
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="54" />
+      <option name="time" value="57" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
@@ -528,16 +529,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/givers/views.py">
+    <entry file="file://$PROJECT_DIR$/givers/templates/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="67" selection-start="1265" selection-end="1265" vertical-scroll-proportion="0.0">
-          <folding />
+        <state line="409" column="131" selection-start="17706" selection-end="17712" vertical-scroll-proportion="-13.58">
+          <folding>
+            <element signature="n#style#0;n#table#0;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/givers/templates/profile.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="396" column="55" selection-start="16450" selection-end="16457" vertical-scroll-proportion="-3.74">
+        <state line="395" column="39" selection-start="16335" selection-end="16335" vertical-scroll-proportion="-8.08">
           <folding>
             <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -554,12 +557,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/givers/templates/index.html">
+    <entry file="file://$PROJECT_DIR$/givers/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="113" column="127" selection-start="5294" selection-end="5294" vertical-scroll-proportion="0.5719361">
-          <folding>
-            <element signature="n#style#0;n#table#0;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
+        <state line="36" column="0" selection-start="1266" selection-end="1266" vertical-scroll-proportion="-3.6327684">
+          <folding />
         </state>
       </provider>
     </entry>

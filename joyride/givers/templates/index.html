@@ -113,7 +113,8 @@
                 $('#content_'+i).append("<h5><strong>Rating:</strong> "+objJson[i].rating+"</h5>");
                 $('#content_'+i).append("<h5><strong>Distance from Start:</strong> "+objJson[i].distance_start+" drive from you</h5>");
                 $('#content_'+i).append("<h5><strong>Distance from Destination:</strong> "+objJson[i].distance_dest+" drive from your destination</h5>");
-                $('#content_'+i).append("<h5><a href='/profile?id="+objJson[i].fb_id+"&start_lat={{ start_lat }}&start_lng={{ start_lng }}&end_lat={{ end_lat }}&end_lng={{ end_lng }}'>More ></a></h5>");
+                $('#content_'+i).append("<h5><a href='/profile?id="+objJson[i].fb_id+"&start_lat={{ start_lat }}&start_lng={{ start_lng }}&end_lat={{ end_lat }}&end_lng={{ end_lng }}' >" +
+                        "<button type='button' class='btn btn-primary'>More</button></a></h5>");
                 secondCol.css('padding-left', '10px');
 
                 var contentString = "<table>" +
@@ -406,7 +407,7 @@
                                             <input type="text" class="form-control"  id="Destination" name="Destination" placeholder="Ending ZIP Code" autocomplete="off">
                                         </div>
                                         <input id="search_form_fb_id" type="hidden" name="search_form_fb_id" value="">
-                                        <button id="searchSubmit" type="submit" class="btn btn-default" name="search_button">Search</button>
+                                        <button id="searchSubmit" type="submit" class="btn btn-success" name="search_button">Search</button>
                                     </form>
                                 </div>
                             </td>

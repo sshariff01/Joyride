@@ -355,7 +355,7 @@
                                             <input type="text" class="form-control"  id="Destination" name="Destination" placeholder="Ending ZIP Code">
                                         </div>
                                         <input id="search_form_fb_id" type="hidden" name="search_form_fb_id" value="">
-                                        <button id="searchSubmit" type="submit" class="btn btn-default" name="search_button">Search</button>
+                                        <button id="searchSubmit" type="submit" class="btn btn-success" name="search_button">Search</button>
                                     </form>
                                 </div>
                             </td>
@@ -385,7 +385,7 @@
             </div>
             <div id="back-button-container">
                 <div id="back-button">
-                    <form id="destinationForm" action="/search/" role="form" class="form-inline" method="post" >
+                    <form id="backForm" action="/search/" role="form" class="form-inline" method="post" >
                         {% csrf_token %}
                         {{ form.non_field_errors }}
                         {{ form.as_p }}
@@ -394,7 +394,9 @@
                         <input type="hidden" class="form-control"  id="end_lat" name="end_lat" value="{{ end_lat }}">
                         <input type="hidden" class="form-control"  id="end_lng" name="end_lng" value="{{ end_lng }}">
                         <input id="back_form_fb_id" type="hidden" name="back_form_fb_id" value="">
-                        <a href="javascript:{}" onclick="document.getElementById('destinationForm').submit();">< Back to Search Results</a>
+                        <a href="javascript:{}" onclick="document.getElementById('backForm').submit();">
+                            <button type='button' class='btn btn-primary'>Back to Search Results</button>
+                        </a>
                     </form>
 {#                    <a href="#">< Back to Search Results</a>#}
                 </div>

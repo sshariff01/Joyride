@@ -26,14 +26,14 @@ def search(request, lat_start="43.722598", lng_start="-79.645825", lat_end="43.8
     giver_distance_start_positions = []
     giver_distance_end_positions = []
 
-    if request.POST.get('lat_start'):
-        lat_start = request.POST.get('lat_start', False).encode('utf8')
-    if request.POST.get('lng_start'):
-        lng_start = request.POST.get('lng_start', False).encode('utf8')
-    if request.POST.get('lat_end'):
-        lat_end = request.POST.get('lat_end', False).encode('utf8')
-    if request.POST.get('lng_end'):
-        lng_end = request.POST.get('lng_end', False).encode('utf8')
+    if request.POST.get('start_lat'):
+        lat_start = request.POST.get('start_lat', False).encode('utf8')
+    if request.POST.get('start_lng'):
+        lng_start = request.POST.get('start_lng', False).encode('utf8')
+    if request.POST.get('end_lat'):
+        lat_end = request.POST.get('end_lat', False).encode('utf8')
+    if request.POST.get('end_lng'):
+        lng_end = request.POST.get('end_lng', False).encode('utf8')
 
     # Get starting latitude and longitude location
     if request.POST.get('StartingLocation'):
@@ -43,7 +43,7 @@ def search(request, lat_start="43.722598", lng_start="-79.645825", lat_end="43.8
         start_location_data = json.loads(response_start_geocode_data)
         lat_start = start_location_data["results"][0]["geometry"]["location"]["lat"]
         lng_start = start_location_data["results"][0]["geometry"]["location"]["lng"]
-    if request.POST.get('EndingLocation'):
+    if request.POST.get('Destination'):
         GEOCODE_DEST_REQUEST_URL = 'http://maps.google.com/maps/api/geocode/json?address='+request.POST.get('Destination', False).encode('utf8')+'&sensor=false'
         GEOCODE_DEST_REQUEST_URL = GEOCODE_DEST_REQUEST_URL.replace (" ", "%20")
         response_dest_geocode_data = urllib2.urlopen(GEOCODE_DEST_REQUEST_URL).read()
@@ -61,7 +61,10 @@ def search(request, lat_start="43.722598", lng_start="-79.645825", lat_end="43.8
         "lng" : lng_end,
     }
 
-    current_user_fb_id = request.POST.get('search_form_fb_id', False).encode('utf8')
+    if request.POST.get('search_form_fb_id'):
+        current_user_fb_id = request.POST.get('search_form_fb_id', False).encode('utf8')
+    else:
+        current_user_fb_id = request.POST.get('back_form_fb_id', False).encode('utf8')
 
     for giver in all_givers:
         hyp_from_start = calc_hypotenuse(float(lat_start), float(lng_start), float(giver.lat_start), float(giver.lng_start))
