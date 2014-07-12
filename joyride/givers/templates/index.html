@@ -28,8 +28,12 @@
         <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
 
         <script>
-            $('.expand_0').click(function() {
-                $('.content_0').slideToggle('slow');
+            $('.link_to_content').click(function(){
+                console.log('script called on!');
+                $('html, body').animate({
+                    scrollTop: $( $(this).attr('href') ).offset().top
+                }, 500);
+                return false;
             });
         </script>
 
@@ -61,17 +65,47 @@
               for (var i = 0; i < objJson.length; i++) {
 
 
-                var profileHolder = $('<div />', {id:'image'+i+'_holder', class:'profiles'});
-                var img = $('<img />', {id: 'image'+i, class: 'profileImage', src : objJson[i].fb_picture, width: '200'});
+                var profileHolder = $('<div />', {id: 'content'+i+'_holder', class: 'profiles'});
+                var aTag = $('<a />', {id: 'imageHolder'+i, href: '#'});
+
+                var clickForMore = $('<div />', {id: 'clickForMore'+i, width: '200'});
+                clickForMore.css({
+                    'position': 'relative',
+                    'left': 0,
+                    'top': 0
+                });
+
+                var fbImg = $('<img />', {id: 'image'+i, class: 'profileImage', src : objJson[i].fb_picture, width: '200', onmouseover: "onImageHover('#image"+i+"', '#clickForMore"+i+"');", onmouseout: "offImageHover('#image"+i+"', '#clickForMore"+i+"');"});
+                fbImg.css({
+                   'position': 'relative',
+                   'top': 0,
+                   'left': 0,
+                   'z-index': 1000
+                });
+
+                var secondImg = $('<img />', {id: 'clickForMore'+i, src: '{% static "img/ridepool_teal.png" %}', width: '200', onmouseover: "onImageHover('#image"+i+"', '#clickForMore"+i+"');", onmouseout: "offImageHover('#image"+i+"', '#clickForMore"+i+"');"});
+                secondImg.css({
+                   'position': 'absolute',
+                   'margin': 'auto',
+                   'top': 0, 'right': 0, 'bottom': 0, 'left': 0,
+{#                   'display': 'none'#}
+                   'opacity': 0,
+                   'z-index': 1
+                });
+
 {#                  'https://graph.facebook.com/v2.0/' + objJson[i].fb_id + '/picture?type=large'#}
 
-                img.css('border-radius', '5px');
+                fbImg.css('border-radius', '5px');
+{#                img.css('opacity', '0.4');#}
 
                 profileHolder.appendTo(divElem);
                 var bigTable = $('<table />').appendTo(profileHolder);
                 var bigRow = $('<tr />').appendTo(bigTable);
                 var firstCol = $('<td />').appendTo(bigRow);
-                img.appendTo(firstCol);
+                fbImg.appendTo(clickForMore);
+                secondImg.appendTo(clickForMore);
+                clickForMore.appendTo(aTag);
+                aTag.appendTo(firstCol);
 
                 var secondCol = $('<td />', {valign: 'top'}).appendTo(bigRow);
                 secondCol.append("<div id='content_"+i+"'><h4>"+objJson[i].name+"</h4></div>");
@@ -82,8 +116,12 @@
                 $('#content_'+i).append("<h5><a href='/profile?id="+objJson[i].fb_id+"&start_lat={{ start_lat }}&start_lng={{ start_lng }}&end_lat={{ end_lat }}&end_lng={{ end_lng }}'>More ></a></h5>");
                 secondCol.css('padding-left', '10px');
 
-                var contentString = "<div>This is " + objJson[i].name + "</div><br/>" +
-                        "<img style='height: 50px; width: 50px;' src='https://graph.facebook.com/v2.0/" + objJson[i].fb_id + "/picture' />";
+                var contentString = "<table>" +
+                        "<tr>" +
+                        "<td><img style='height: 50px; width: 50px; border-radius: 25px;' src='https://graph.facebook.com/v2.0/" + objJson[i].fb_id + "/picture' /></td>" +
+                        "<td style='padding-left: 10px;'><div><a class='link_to_content' href='#content"+i+"_holder'><strong>" + objJson[i].name + "</strong></a></div></td>" +
+                        "</tr>" +
+                        "</table>";
                 var latLng = new google.maps.LatLng(objJson[i].lat_start, objJson[i].lng_start);
 
 {#                var infowindow = new google.maps.InfoWindow({#}
@@ -229,6 +267,20 @@
         </script>
 
         <script>
+            function onImageHover(fbImgElem, clickForMoreElem)
+            {
+{#                $(clickForMoreElem).css('opacity', '1.0');#}
+                $(fbImgElem).css('opacity', '0.6');
+            }
+
+            function offImageHover(fbImgElem, clickForMoreElem)
+            {
+{#                $(clickForMoreElem).css('opacity', '0.0');#}
+                $(fbImgElem).css('opacity', '1.0');
+            }
+        </script>
+
+        <script>
             function onLogoHover()
             {
                 $("#iconImg").attr('src', '{% static "img/ridepool_teal.png" %}');
@@ -348,10 +400,10 @@
                                         {{ form.non_field_errors }}
                                         {{ form.as_p }}
                                         <div class="form-group">
-                                            <input type="text" class="form-control"  id="StartingLocation" name="StartingLocation" placeholder="Starting ZIP Code">
+                                            <input type="text" class="form-control"  id="StartingLocation" name="StartingLocation" placeholder="Starting ZIP Code" autocomplete="off">
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" class="form-control"  id="Destination" name="Destination" placeholder="Ending ZIP Code">
+                                            <input type="text" class="form-control"  id="Destination" name="Destination" placeholder="Ending ZIP Code" autocomplete="off">
                                         </div>
                                         <input id="search_form_fb_id" type="hidden" name="search_form_fb_id" value="">
                                         <button id="searchSubmit" type="submit" class="btn btn-default" name="search_button">Search</button>

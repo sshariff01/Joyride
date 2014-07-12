@@ -4,7 +4,7 @@
     <list default="true" id="19fd5be2-2288-4a5a-9e1e-288a301330ce" name="Default" comment="" />
     <ignored path="joyride.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/index.html" changelist="19fd5be2-2288-4a5a-9e1e-288a301330ce" time="1405065363459" ignored="false" />
+    <file path="/index.html" changelist="19fd5be2-2288-4a5a-9e1e-288a301330ce" time="1405124085921" ignored="false" />
     <file path="/views.py" changelist="19fd5be2-2288-4a5a-9e1e-288a301330ce" time="1405064168143" ignored="false" />
     <file path="/search.html" changelist="19fd5be2-2288-4a5a-9e1e-288a301330ce" time="1403368613923" ignored="false" />
     <file path="/urls.py" changelist="19fd5be2-2288-4a5a-9e1e-288a301330ce" time="1404978572156" ignored="false" />
@@ -46,7 +46,7 @@
       <file leaf-file-name="profile.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/givers/templates/profile.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="341" column="188" selection-start="12911" selection-end="13064" vertical-scroll-proportion="-13.916667">
+            <state line="396" column="55" selection-start="16450" selection-end="16457" vertical-scroll-proportion="-3.74">
               <folding>
                 <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -67,8 +67,10 @@
       <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/givers/templates/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="333" column="37" selection-start="13427" selection-end="13427" vertical-scroll-proportion="0.5925297">
-              <folding />
+            <state line="81" column="29" selection-start="3436" selection-end="3436" vertical-scroll-proportion="0.5737122">
+              <folding>
+                <element signature="n#style#0;n#table#0;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -535,7 +537,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/givers/templates/profile.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="341" column="188" selection-start="12911" selection-end="13064" vertical-scroll-proportion="-13.916667">
+        <state line="396" column="55" selection-start="16450" selection-end="16457" vertical-scroll-proportion="-3.74">
           <folding>
             <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -554,8 +556,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/givers/templates/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="333" column="37" selection-start="13427" selection-end="13427" vertical-scroll-proportion="0.5925297">
-          <folding />
+        <state line="81" column="29" selection-start="3436" selection-end="3436" vertical-scroll-proportion="0.5737122">
+          <folding>
+            <element signature="n#style#0;n#table#0;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
