@@ -1,0 +1,97 @@
+body {
+    background-image: url("img/nyc_taxi.jpg");
+    background-size:cover;
+    background-attachment: fixed;
+}
+
+.header-container {
+    min-height: 60px;
+    background-color: black;
+}
+
+#header {
+    width: 82%;
+    min-width: 600px;
+    margin: 0 auto;
+    padding: 15px;
+    z-index:99
+
+}
+
+.container {
+    height:500px;
+    width:40%;
+    background-color: white;
+    padding: 0;
+    position: relative;
+    top:0;
+    right:0;
+    bottom:0;
+    left:0;
+    border-radius: 5px;
+}
+
+#map-canvas {
+    height: 480px;
+    margin: 10px;
+}
+
+#map-canvas2 {
+    height: 480px;
+    margin: 10px;
+}
+
+#login-container {
+    height:100%;
+    width:100%;
+    background-color: black;
+    padding: 0;
+    margin: auto;
+    position: absolute;
+    top:0;
+    right:0;
+    bottom:0;
+    left:0;
+    z-index:100;
+    opacity:0.6;
+}
+
+#login-btn {
+    width:400px;
+    height:76px;
+    padding: 0;
+    z-index:100;
+}
+
+.Absolute-Center {
+  margin: auto;
+  position: absolute;
+  top: 0; left: 0; bottom: 40%; right: 0;
+}
+
+.profiles-container {
+    width:82%;
+    margin: 0 auto;
+}
+
+.profiles {
+    background-color: gainsboro;
+    margin: 10px;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+#back-button-container {
+    position: absolute;
+    top:80px; left: 0; bottom: 0; right: 0;
+    width:82%;
+    margin: 0 auto;
+}
+
+#back-button {
+    text-align: right;
+    margin: 10px;
+    border-radius: 5px;
+    padding: 10px;
+    z-index: 100;
+}
