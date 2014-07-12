@@ -4,7 +4,7 @@
     <list default="true" id="19fd5be2-2288-4a5a-9e1e-288a301330ce" name="Default" comment="" />
     <ignored path="joyride.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/index.html" changelist="19fd5be2-2288-4a5a-9e1e-288a301330ce" time="1405124085921" ignored="false" />
+    <file path="/index.html" changelist="19fd5be2-2288-4a5a-9e1e-288a301330ce" time="1405126595747" ignored="false" />
     <file path="/views.py" changelist="19fd5be2-2288-4a5a-9e1e-288a301330ce" time="1405064168143" ignored="false" />
     <file path="/search.html" changelist="19fd5be2-2288-4a5a-9e1e-288a301330ce" time="1403368613923" ignored="false" />
     <file path="/urls.py" changelist="19fd5be2-2288-4a5a-9e1e-288a301330ce" time="1404978572156" ignored="false" />
@@ -67,7 +67,7 @@
       <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/givers/templates/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="81" column="29" selection-start="3436" selection-end="3436" vertical-scroll-proportion="0.5737122">
+            <state line="113" column="127" selection-start="5294" selection-end="5294" vertical-scroll-proportion="0.5719361">
               <folding>
                 <element signature="n#style#0;n#table#0;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
@@ -556,7 +556,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/givers/templates/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="81" column="29" selection-start="3436" selection-end="3436" vertical-scroll-proportion="0.5737122">
+        <state line="113" column="127" selection-start="5294" selection-end="5294" vertical-scroll-proportion="0.5719361">
           <folding>
             <element signature="n#style#0;n#table#0;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>

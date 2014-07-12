@@ -66,7 +66,7 @@
 
 
                 var profileHolder = $('<div />', {id: 'content'+i+'_holder', class: 'profiles'});
-                var aTag = $('<a />', {id: 'imageHolder'+i, href: '#'});
+                var aTag = $('<a />', {id: 'imageHolder'+i, href: '/profile?id='+objJson[i].fb_id+'&start_lat={{ start_lat }}&start_lng={{ start_lng }}&end_lat={{ end_lat }}&end_lng={{ end_lng }}'});
 
                 var clickForMore = $('<div />', {id: 'clickForMore'+i, width: '200'});
                 clickForMore.css({
@@ -83,13 +83,13 @@
                    'z-index': 1000
                 });
 
-                var secondImg = $('<img />', {id: 'clickForMore'+i, src: '{% static "img/ridepool_teal.png" %}', width: '200', onmouseover: "onImageHover('#image"+i+"', '#clickForMore"+i+"');", onmouseout: "offImageHover('#image"+i+"', '#clickForMore"+i+"');"});
+                var secondImg = $('<img />', {id: 'clickForMore'+i, src: '{% static "img/moreinfo.png" %}', width: '200', onmouseover: "onImageHover('#image"+i+"', '#clickForMore"+i+"');", onmouseout: "offImageHover('#image"+i+"', '#clickForMore"+i+"');"});
                 secondImg.css({
                    'position': 'absolute',
                    'margin': 'auto',
                    'top': 0, 'right': 0, 'bottom': 0, 'left': 0,
 {#                   'display': 'none'#}
-                   'opacity': 0,
+{#                   'opacity': 0,#}
                    'z-index': 1
                 });
 
@@ -110,9 +110,9 @@
                 var secondCol = $('<td />', {valign: 'top'}).appendTo(bigRow);
                 secondCol.append("<div id='content_"+i+"'><h4>"+objJson[i].name+"</h4></div>");
 {#                secondCol.append('<div><h4>'+objJson[i].name+'</h4></div>');#}
-                $('#content_'+i).append("<h5>Rating: "+objJson[i].rating+"</h5>");
-                $('#content_'+i).append("<h5>Distance from Start: "+objJson[i].distance_start+" drive from your starting point</h5>");
-                $('#content_'+i).append("<h5>Distance from Destination: "+objJson[i].distance_dest+" drive from your destination</h5>");
+                $('#content_'+i).append("<h5><strong>Rating:</strong> "+objJson[i].rating+"</h5>");
+                $('#content_'+i).append("<h5><strong>Distance from Start:</strong> "+objJson[i].distance_start+" drive from you</h5>");
+                $('#content_'+i).append("<h5><strong>Distance from Destination:</strong> "+objJson[i].distance_dest+" drive from your destination</h5>");
                 $('#content_'+i).append("<h5><a href='/profile?id="+objJson[i].fb_id+"&start_lat={{ start_lat }}&start_lng={{ start_lng }}&end_lat={{ end_lat }}&end_lng={{ end_lng }}'>More ></a></h5>");
                 secondCol.css('padding-left', '10px');
 
@@ -270,7 +270,7 @@
             function onImageHover(fbImgElem, clickForMoreElem)
             {
 {#                $(clickForMoreElem).css('opacity', '1.0');#}
-                $(fbImgElem).css('opacity', '0.6');
+                $(fbImgElem).css('opacity', '0.4');
             }
 
             function offImageHover(fbImgElem, clickForMoreElem)
