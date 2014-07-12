@@ -2,17 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="deb5cedf-bce2-44fa-be5f-40e0e1cd6790" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/givers/templates/css/custom.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/givers/templates/css/index.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/givers/templates/css/main.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/givers/templates/css/normalize.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/givers/templates/css/profile.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/givers/templates/img/loginBG.jpg" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/findaride/settings.py" afterPath="$PROJECT_DIR$/findaride/settings.py" />
     </list>
     <ignored path="FindARide.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/Dummy.txt" changelist="deb5cedf-bce2-44fa-be5f-40e0e1cd6790" time="1405194627778" ignored="false" />
-    <file path="/settings.py" changelist="deb5cedf-bce2-44fa-be5f-40e0e1cd6790" time="1405195361184" ignored="false" />
+    <file path="/settings.py" changelist="deb5cedf-bce2-44fa-be5f-40e0e1cd6790" time="1405197284967" ignored="false" />
     <file path="/urls.py" changelist="deb5cedf-bce2-44fa-be5f-40e0e1cd6790" time="1405194937595" ignored="false" />
     <file path="/index.html" changelist="deb5cedf-bce2-44fa-be5f-40e0e1cd6790" time="1405195609985" ignored="false" />
     <file path="/profile.html" changelist="deb5cedf-bce2-44fa-be5f-40e0e1cd6790" time="1405195623428" ignored="false" />
@@ -56,7 +51,7 @@
       <file leaf-file-name="settings.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/findaride/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="65" column="5" selection-start="1768" selection-end="1768" vertical-scroll-proportion="0.4114713">
+            <state line="110" column="0" selection-start="2599" selection-end="2599" vertical-scroll-proportion="0.09313726">
               <folding />
             </state>
           </provider>
@@ -90,9 +85,9 @@
     <option name="changedFiles">
       <list>
         <option value="$PROJECT_DIR$/findaride/urls.py" />
-        <option value="$PROJECT_DIR$/findaride/settings.py" />
         <option value="$PROJECT_DIR$/givers/templates/index.html" />
         <option value="$PROJECT_DIR$/givers/templates/profile.html" />
+        <option value="$PROJECT_DIR$/findaride/settings.py" />
       </list>
     </option>
   </component>
@@ -380,10 +375,10 @@
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3296875" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.1484375" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24958813" sideWeight="0.6703125" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24958813" sideWeight="0.8515625" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
@@ -506,7 +501,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/findaride/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="65" column="5" selection-start="1768" selection-end="1768" vertical-scroll-proportion="0.4114713">
+        <state line="110" column="0" selection-start="2599" selection-end="2599" vertical-scroll-proportion="0.09313726">
           <folding />
         </state>
       </provider>
