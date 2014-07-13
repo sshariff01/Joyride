@@ -2,15 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="deb5cedf-bce2-44fa-be5f-40e0e1cd6790" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/findaride/settings.py" afterPath="$PROJECT_DIR$/findaride/settings.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/givers/templates/index.html" afterPath="$PROJECT_DIR$/givers/templates/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/givers/templates/profile.html" afterPath="$PROJECT_DIR$/givers/templates/profile.html" />
     </list>
     <ignored path="FindARide.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/Dummy.txt" changelist="deb5cedf-bce2-44fa-be5f-40e0e1cd6790" time="1405194627778" ignored="false" />
     <file path="/settings.py" changelist="deb5cedf-bce2-44fa-be5f-40e0e1cd6790" time="1405197284967" ignored="false" />
     <file path="/urls.py" changelist="deb5cedf-bce2-44fa-be5f-40e0e1cd6790" time="1405194937595" ignored="false" />
-    <file path="/index.html" changelist="deb5cedf-bce2-44fa-be5f-40e0e1cd6790" time="1405195609985" ignored="false" />
-    <file path="/profile.html" changelist="deb5cedf-bce2-44fa-be5f-40e0e1cd6790" time="1405195623428" ignored="false" />
+    <file path="/index.html" changelist="deb5cedf-bce2-44fa-be5f-40e0e1cd6790" time="1405231266875" ignored="false" />
+    <file path="/profile.html" changelist="deb5cedf-bce2-44fa-be5f-40e0e1cd6790" time="1405231252211" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,28 +40,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="jquery-2.1.1.min.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/findaride/static/js/vendor/jquery-2.1.1.min.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="0" selection-start="84245" selection-end="84245" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="settings.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="settings.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/findaride/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="110" column="0" selection-start="2599" selection-end="2599" vertical-scroll-proportion="0.09313726">
+            <state line="110" column="0" selection-start="2599" selection-end="2599" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="profile.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/givers/templates/profile.html">
+      <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/givers/templates/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="354" column="89" selection-start="13984" selection-end="13984" vertical-scroll-proportion="-221.25">
+            <state line="5" column="23" selection-start="172" selection-end="172" vertical-scroll-proportion="0.083798885">
               <folding />
             </state>
           </provider>
@@ -85,17 +77,17 @@
     <option name="changedFiles">
       <list>
         <option value="$PROJECT_DIR$/findaride/urls.py" />
-        <option value="$PROJECT_DIR$/givers/templates/index.html" />
-        <option value="$PROJECT_DIR$/givers/templates/profile.html" />
         <option value="$PROJECT_DIR$/findaride/settings.py" />
+        <option value="$PROJECT_DIR$/givers/templates/profile.html" />
+        <option value="$PROJECT_DIR$/givers/templates/index.html" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="10" />
-    <option name="y" value="29" />
-    <option name="width" value="1260" />
-    <option name="height" value="760" />
+    <option name="x" value="1280" />
+    <option name="y" value="-449" />
+    <option name="width" value="960" />
+    <option name="height" value="1080" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -370,7 +362,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="10" y="29" width="1260" height="760" extended-state="0" />
+    <frame x="1280" y="-449" width="960" height="1080" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -378,7 +370,7 @@
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.1484375" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24958813" sideWeight="0.8515625" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.33150986" sideWeight="0.8515625" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
@@ -476,13 +468,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/givers/templates/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="22" selection-start="171" selection-end="171" vertical-scroll-proportion="0.13586956">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/givers/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.85141903">
@@ -492,16 +477,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/givers/templates/profile.html">
+    <entry file="file://$PROJECT_DIR$/findaride/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="354" column="89" selection-start="13984" selection-end="13984" vertical-scroll-proportion="-221.25">
+        <state line="110" column="0" selection-start="2599" selection-end="2599" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/findaride/settings.py">
+    <entry file="file://$PROJECT_DIR$/givers/templates/profile.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="110" column="0" selection-start="2599" selection-end="2599" vertical-scroll-proportion="0.09313726">
+        <state line="5" column="23" selection-start="172" selection-end="172" vertical-scroll-proportion="-3.125">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/givers/templates/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="23" selection-start="172" selection-end="172" vertical-scroll-proportion="0.083798885">
           <folding />
         </state>
       </provider>
